@@ -45,7 +45,7 @@ No page hand-types what a program prints. A lesson marks the spot and the runner
 
 ## Sibling libraries
 
-- [**Concurrency** ↗](https://masiarek.github.io/concurrency-learning-library/) — one question per page, answered in Rust, Go, C, C++, Java and Python, plus a map of 149 concurrency concepts.
+- [**Concurrency** ↗](https://masiarek.github.io/concurrency-learning-library/) — one question per page, answered in Rust, Go, C, C++, Java and Python, plus a map of over 150 concurrency concepts, each with its name in every language.
 - [**Rust** ↗](https://masiarek.github.io/rust-learning-library/) — threads, channels, `Arc`, `Send` and `Sync`, lock poisoning; and data races and forgotten unlocks for C programmers.
 - [**C** ↗](https://masiarek.github.io/c-learning-library/) and [**C++** ↗](https://masiarek.github.io/cpp-learning-library/) — building, strings, bytes on the wire, clocks and benchmarking.
 - [**Python** ↗](https://masiarek.github.io/python-learning-library/) — text and bytes.
