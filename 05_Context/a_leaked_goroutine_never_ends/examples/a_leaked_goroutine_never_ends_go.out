@@ -1,0 +1,11 @@
+unbuffered channel:
+  callers: 3 × context deadline exceeded
+  goroutines left behind: 3
+buffered channel of 1:
+  callers: 3 × context deadline exceeded
+  goroutines left behind: 0
+send in a select with ctx.Done():
+  callers: 3 × context deadline exceeded
+  goroutines left behind: 0
+main returns with 4 goroutines running:
+  3 × [chan send] in main.fetchUnbuffered.func1

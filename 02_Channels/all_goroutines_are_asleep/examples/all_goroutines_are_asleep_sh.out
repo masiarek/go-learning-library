@@ -1,0 +1,15 @@
+$ go build lonely_send.go
+$ ./lonely_send
+main: sending an order that nothing will receive
+fatal error: all goroutines are asleep - deadlock!
+goroutine N [chan send] in main.main
+exit status 2
+$ go build sleeper.go
+$ ./sleeper
+main: waiting for a shipment
+sleeper: awake after 2 s, returning
+fatal error: all goroutines are asleep - deadlock!
+goroutine N [chan receive] in main.main
+goroutine N [chan receive] in main.packer
+goroutine N [chan receive] in main.shipper
+exit status 2

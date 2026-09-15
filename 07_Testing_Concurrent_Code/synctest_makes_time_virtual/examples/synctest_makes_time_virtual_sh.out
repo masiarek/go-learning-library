@@ -1,0 +1,16 @@
+$ go mod init example
+$ go test -v -count=1
+=== RUN   TestSilentServerTimesOut
+    fetch_test.go:23: the bubble's clock starts at 2000-01-01 00:00:00 +0000 UTC
+    fetch_test.go:30: fetch returned "no reply within 1h0m0s" after 1h0m0s
+--- PASS: TestSilentServerTimesOut
+=== RUN   TestSlowReplyBeatsTimeout
+    fetch_test.go:46: fetch returned "order 1042 shipped" after 30m0s
+--- PASS: TestSlowReplyBeatsTimeout
+=== RUN   TestBusyWorkTakesNoTime
+    fetch_test.go:57: adding up 100,000,000 numbers (total 4999999950000000) took 0s
+--- PASS: TestBusyWorkTakesNoTime
+PASS
+ok  	example
+exit status 0
+the test binary ran for under 10 s of wall time: true

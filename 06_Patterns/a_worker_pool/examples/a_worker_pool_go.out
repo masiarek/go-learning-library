@@ -1,0 +1,12 @@
+workers:                    3
+jobs sent:                  6
+results received:           6
+results closed:             after all 3 workers returned
+most jobs in progress <= 3: true
+report, in input order:
+  1. 7 words  a goroutine is a function running concurrently
+  2. 6 words  a channel carries values between goroutines
+  3. 9 words  close the jobs channel once every job is sent
+  4. 8 words  each worker returns when its range loop ends
+  5. 6 words  results are stored by job index
+  6. 9 words  so the report keeps the order of the input

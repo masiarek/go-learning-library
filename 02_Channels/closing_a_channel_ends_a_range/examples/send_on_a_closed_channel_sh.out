@@ -1,0 +1,5 @@
+$ go build closed_send.go
+$ ./closed_send
+main: closed the channel, now sending on it
+panic: send on closed channel
+exit status 2

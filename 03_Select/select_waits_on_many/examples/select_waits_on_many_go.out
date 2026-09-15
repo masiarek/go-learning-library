@@ -1,0 +1,16 @@
+1. One select, two channels: it waits until either can proceed
+   7 selects: 3 from temperatures, 4 from humidities
+
+2. default: a receive that does not wait
+   no job waiting, so default ran
+   received: resize image
+
+3. default: a send that does not wait
+   queued:  order-1
+   queued:  order-2
+   dropped: order-3 (the buffer of 2 is full)
+   dropped: order-4 (nobody waiting on the unbuffered channel)
+
+4. Every case is evaluated on entry, whichever case is chosen
+   label(order-5) ran
+   chose the receive: invoice-7

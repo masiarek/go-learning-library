@@ -1,0 +1,15 @@
+1. a 100ms timeout on a lookup that takes 3s
+   price, err: 0 context deadline exceeded
+   errors.Is(err, context.DeadlineExceeded): true
+   errors.Is(err, context.Canceled):         false
+   waited at least 100ms: true
+   gave up before 3s:     true
+2. the same timeout, with cancel() called before the clock runs out
+   err: context canceled
+3. a deadline that has already passed
+   ctx.Err() at once: context deadline exceeded
+4. children of a parent whose deadline is a minute away
+   asked for 1h, deadline equals the parent's: true
+   asked for 1s, deadline before the parent's: true
+5. a parent's 100ms deadline passes under a child that asked for 1h
+   child.Err(): context deadline exceeded

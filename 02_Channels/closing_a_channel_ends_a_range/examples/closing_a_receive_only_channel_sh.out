@@ -1,0 +1,4 @@
+$ go build receiver_closes.go
+# command-line-arguments
+./receiver_closes.go:12:8: invalid operation: cannot close receive-only channel orders (variable of type <-chan string)
+exit status 1

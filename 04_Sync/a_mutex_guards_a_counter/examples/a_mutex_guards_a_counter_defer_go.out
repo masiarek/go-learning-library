@@ -1,0 +1,7 @@
+defer mu.Unlock():
+  recovered panic:      deposit of -5
+  unlocked afterwards:  true
+  next deposit, balance: 150
+mu.Unlock() on the last line:
+  recovered panic:      deposit of -5
+  unlocked afterwards:  false

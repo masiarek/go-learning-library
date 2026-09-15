@@ -1,0 +1,4 @@
+quantity: 0, err: strconv.Atoi: parsing "three": invalid syntax
+price: 19.99, err: <nil>
+goroutines after a buffered send nobody receives:   1
+goroutines after an unbuffered send nobody receives: 2

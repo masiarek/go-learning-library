@@ -1,0 +1,12 @@
+range: received 21
+range: received 19
+range: received 23
+range: ended, because the sensor closed the channel
+receive after close: r = 0, ok = false
+receive after close: r = 0, ok = false
+closed with 2 in the buffer: "order-1", ok = true
+closed with 2 in the buffer: "order-2", ok = true
+closed with 2 in the buffer: "", ok = false
+send on a closed channel: panic: send on closed channel
+close a closed channel:   panic: close of closed channel
+close a nil channel:      panic: close of nil channel

@@ -1,0 +1,5 @@
+wg.Go   : order A-1001
+wg.Go   : order A-1002
+Add/Done: order A-1003
+Add/Done: order A-1004
+main:     both workers flushed; returning

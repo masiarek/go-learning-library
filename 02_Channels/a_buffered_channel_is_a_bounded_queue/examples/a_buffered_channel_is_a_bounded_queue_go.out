@@ -1,0 +1,22 @@
+one goroutine, no receiver:
+  made        len 0  cap 3
+  sent job-1  len 1  cap 3
+  sent job-2  len 2  cap 3
+  sent job-3  len 3  cap 3
+  took job-1  len 2  cap 3
+  took job-2  len 1  cap 3
+  took job-3  len 0  cap 3
+
+a producer with 7 jobs, and main taking one only when the producer is stuck:
+  producer parked in [chan send] after 3 sends, len 3
+  main took job-1
+  producer parked in [chan send] after 4 sends, len 3
+  main took job-2
+  producer parked in [chan send] after 5 sends, len 3
+  main took job-3
+  producer parked in [chan send] after 6 sends, len 3
+  main took job-4
+  main took job-5
+  main took job-6
+  main took job-7
+  producer closed the queue after 7 sends

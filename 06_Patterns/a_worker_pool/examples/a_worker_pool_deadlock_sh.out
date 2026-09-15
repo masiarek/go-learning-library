@@ -1,0 +1,7 @@
+$ go build deadlock.go
+$ ./deadlock
+main: sent job 1
+main: sent job 2
+main: sent job 3
+fatal error: all goroutines are asleep - deadlock!
+exit status 2

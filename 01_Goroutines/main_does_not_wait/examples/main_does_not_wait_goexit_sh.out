@@ -1,0 +1,7 @@
+$ go build goexit.go
+$ ./goexit
+main:   calling runtime.Goexit
+main:   deferred calls run
+worker: still running a second later
+fatal error: no goroutines (main called runtime.Goexit) - deadlock!
+exit status 2

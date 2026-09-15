@@ -1,0 +1,3 @@
+worker: writing three orders to a buffered writer
+main:   the worker has written its orders; returning
+main:   deferred call runs as main returns

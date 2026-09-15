@@ -1,0 +1,16 @@
+before any cancel:
+  order     ctx.Err() = <nil>             goroutine waiting
+  payment   ctx.Err() = <nil>             goroutine waiting
+  shipping  ctx.Err() = <nil>             goroutine waiting
+  label     ctx.Err() = <nil>             goroutine waiting
+after cancelShipping():
+  order     ctx.Err() = <nil>             goroutine waiting
+  payment   ctx.Err() = <nil>             goroutine waiting
+  shipping  ctx.Err() = context canceled  goroutine returned
+  label     ctx.Err() = context canceled  goroutine returned
+after cancelOrder():
+  order     ctx.Err() = context canceled  goroutine returned
+  payment   ctx.Err() = context canceled  goroutine returned
+  shipping  ctx.Err() = context canceled  goroutine returned
+  label     ctx.Err() = context canceled  goroutine returned
+errors.Is(payment.Err(), context.Canceled): true

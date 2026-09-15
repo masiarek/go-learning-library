@@ -1,0 +1,10 @@
+slots:                   3
+tasks started:           5
+tasks inside:            3
+slots taken:             3 of 3
+started, not let in:     2
+a 4th acquire:           would block
+main opens the barrier
+tasks finished:          5
+slots taken:             0 of 3
+most inside at once:     3

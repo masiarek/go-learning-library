@@ -1,0 +1,10 @@
+once.Do(loadConfig)
+  call 1: panic = config file missing
+  call 2: panic = <nil>
+  call 3: panic = <nil>
+  loadConfig ran: 1
+load := sync.OnceFunc(loadConfig)
+  call 1: panic = config file missing
+  call 2: panic = config file missing
+  call 3: panic = config file missing
+  loadConfig ran: 1

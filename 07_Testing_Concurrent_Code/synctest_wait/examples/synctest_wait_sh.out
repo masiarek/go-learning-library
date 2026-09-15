@@ -1,0 +1,20 @@
+$ go mod init example
+$ go test -v -count=1 -run 'TestWorkerStops$'
+=== RUN   TestWorkerStops
+    worker_test.go:32: after an order: stopped = false
+    worker_test.go:39: after cancel:   stopped = true
+--- PASS: TestWorkerStops
+PASS
+ok  	example
+exit status 0
+$ go test -race -count=1 -run 'TestWorkerStops$'
+PASS
+ok  	example
+exit status 0
+$ go test -race -count=1 -run TestWorkerStopsWithoutWait
+race report: yes
+--- FAIL: TestWorkerStopsWithoutWait
+    testing.go: race detected during execution of test
+FAIL
+FAIL	example
+exit status 1

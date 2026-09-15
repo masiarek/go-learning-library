@@ -1,0 +1,7 @@
+1. count(1..5) -> square -> main reads to the end
+   main received:  [1 4 9 16 25]
+   stages.Wait()   returned: count and square have ended
+2. count(1..) -> square -> main reads 3, then cancels
+   main received:  [1 4 9]
+   stages.Wait()   returned: count and square have ended
+   squares open:   false

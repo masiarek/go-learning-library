@@ -1,0 +1,11 @@
+$ go mod init example
+$ grep -n 'wg.Add' main.go
+12:			wg.Add(1)
+22:			wg.Add(1)
+$ go build .
+exit status 0
+$ go vet .
+# example
+# [example]
+./main.go:12:10: WaitGroup.Add called from inside new goroutine
+exit status 1

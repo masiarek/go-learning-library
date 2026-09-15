@@ -1,0 +1,4 @@
+Add inside the goroutine:   Wait returned, 0 of 3 tasks finished
+                            (3 finished after that, with nobody waiting)
+Add before the go statement: Wait returned, 3 of 3 tasks finished
+wg.Go:                       Wait returned, 3 of 3 tasks finished

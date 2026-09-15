@@ -1,0 +1,6 @@
+$ go build extra_done.go && ./extra_done
+panic: sync: negative WaitGroup counter
+exit status 2
+$ go build missing_done.go && ./missing_done
+fatal error: all goroutines are asleep - deadlock!
+exit status 2

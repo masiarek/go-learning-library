@@ -1,0 +1,17 @@
+$ go mod init example
+$ go build -o counter .
+$ ./counter 2 >/dev/null
+exit status 0, race report: no
+$ go build -race -o counter_race .
+$ ./counter_race 1 >/dev/null
+exit status 0, race report: no
+$ ./counter_race 2 >/dev/null
+exit status 66, race report: yes
+lines of counter.go the report points at:
+  counter.go:20  wg.Go(func() {
+  counter.go:22  orders++ // read, add one, write back: no lock
+$ GOMAXPROCS=1 ./counter_race 2 >/dev/null
+exit status 66, race report: yes
+$ go run -race . 2 >/dev/null
+exit status 1, race report: yes
+go run's last line on stderr: exit status 66

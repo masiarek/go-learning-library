@@ -1,0 +1,10 @@
+$ go build nil_receive.go && ./nil_receive
+main: receiving from a nil channel
+fatal error: all goroutines are asleep - deadlock!
+main goroutine: [chan receive (nil chan)]
+exit status 2
+$ go build nil_select.go && ./nil_select
+main: select over two nil channels, no default
+fatal error: all goroutines are asleep - deadlock!
+main goroutine: [select]
+exit status 2

@@ -1,0 +1,8 @@
+$ go build no_cancel.go
+$ ./no_cancel
+main received: 1
+main received: 4
+main received: 9
+main: done reading, waiting for the stages to return
+fatal error: all goroutines are asleep - deadlock!
+exit status 2

@@ -1,0 +1,6 @@
+$ go build prices.go
+$ ./prices
+main:   starting the worker
+worker: deferred call runs as the panic unwinds
+panic: runtime error: index out of range [3] with length 3
+exit status 2

@@ -1,0 +1,6 @@
+expected total:           800000
+atomic.Int64 total:       800000
+goroutines calling Close: 8
+calls that shut it down:  1
+calls told it was closed: 7
+shutdowns performed:      1

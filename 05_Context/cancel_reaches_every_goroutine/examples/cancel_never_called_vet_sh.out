@@ -1,0 +1,7 @@
+$ go vet .
+./quote.go:10:7: the cancel function returned by context.WithTimeout should be called, not discarded, to avoid a context leak
+./quote.go:15:2: the cancel function is not used on all paths (possible context leak)
+./quote.go:17:3: this return statement may be reached without using the cancel var defined on line 15
+exit status 1
+$ go vet .    # after moving defer cancel() to the line after each context.With...
+exit status 0

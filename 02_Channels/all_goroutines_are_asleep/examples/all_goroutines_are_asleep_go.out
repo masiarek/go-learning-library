@@ -1,0 +1,3 @@
+main: nothing shipped after 2 s, and the runtime reported no deadlock
+packer:  parked in [chan receive]
+shipper: parked in [chan receive]

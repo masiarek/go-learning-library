@@ -1,0 +1,45 @@
+# Every example must run and print exactly what its recorded .out file says — and
+# every lesson page's generated output block must match that run.
+#
+#   examples/*.go   Go 1.25, from actions/setup-go, one package-main file each
+#   examples/*.sh   bash drivers — for a panic's exit status, `go run -race`, `go test`
+#
+# Both machines on purpose: two operating systems, two CPU architectures (x86-64
+# and arm64), and two kernels' schedulers under the Go runtime. A key is only what
+# both agree on — see CONTRIBUTING.md, "Deterministic about nondeterminism".
+
+name: examples
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.25'
+          cache: false        # no go.sum to key a cache on: examples are single files
+      - name: Show toolchain
+        run: |
+          go version
+          python3 --version
+          bash --version | head -1
+          uname -sm
+      - name: Every Go file is gofmt-clean
+        run: |
+          unformatted=$(gofmt -l .)
+          if [ -n "$unformatted" ]; then echo "$unformatted"; exit 1; fi
+      - name: Run every example and check it against its answer key
+        run: python3 tools/run_examples.py --check
+      - name: Check that every external link is marked as external
+        run: python3 tools/check_link_style.py

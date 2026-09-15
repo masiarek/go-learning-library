@@ -1,0 +1,4 @@
+workers:              8
+views each:           100000
+expected total:       800000
+total with a Mutex:   800000

@@ -1,0 +1,6 @@
+orders with cap 0:
+  when the packer came to receive, main was parked in [chan send]
+  main got back "packed order-17"
+orders with cap 1:
+  when the packer came to receive, main was parked in [chan receive]
+  main got back "packed order-17"

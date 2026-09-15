@@ -1,0 +1,11 @@
+1. price and stock wait on ctx; reviews fails at once
+   price    returned:  price: gave up: reviews: service unavailable
+   stock    returned:  stock: gave up: reviews: service unavailable
+   reviews  returned:  reviews: service unavailable
+   Wait returned:     reviews: service unavailable
+   ctx.Err():         context canceled
+   context.Cause:     reviews: service unavailable
+2. no task fails
+   ctx.Err() before:  <nil>
+   Wait returned:     <nil>
+   ctx.Err() after:   context canceled

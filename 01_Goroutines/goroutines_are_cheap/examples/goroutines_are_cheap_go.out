@@ -1,0 +1,3 @@
+goroutines when main starts:         1
+goroutines while workers block: 100001
+goroutines after release:            1

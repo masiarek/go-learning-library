@@ -1,0 +1,7 @@
+1. Two cases, both ready on every one of 10000 selects
+   urgent chosen between 40% and 60% of the time:  true
+   routine chosen between 40% and 60% of the time: true
+
+2. 100 urgent and 100 routine messages already queued
+   plain select handled every urgent message first:        false
+   urgent-first select handled every urgent message first: true

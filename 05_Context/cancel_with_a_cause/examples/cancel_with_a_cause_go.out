@@ -1,0 +1,16 @@
+1. three steps of one order; the stock check fails and cancels the rest
+   stock    returned:  warehouse: out of stock
+   payment  returned:  context canceled
+   shipping returned:  context canceled
+   order.Err():          context canceled
+   context.Cause(order): warehouse: out of stock
+2. Cause through a child, and Cause with no cause given
+   label.Err():          context canceled
+   context.Cause(label): warehouse: out of stock
+   errors.Is(context.Cause(label), errOutOfStock): true
+   not canceled yet:        Cause = <nil>
+   plain WithCancel:        Cause = context canceled
+   WithCancelCause, nil:    Cause = context canceled
+3. WithTimeoutCause: the cause is recorded only if the clock runs out
+   the clock ran out:    Err = context deadline exceeded  Cause = supplier: no quote within 100ms
+   cancel() came first:  Err = context canceled           Cause = context canceled

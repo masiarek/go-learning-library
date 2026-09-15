@@ -1,0 +1,11 @@
+words sent:        8
+digests received:  8
+sorted by word:
+  channel    69e36568
+  context    ea7792a2
+  goroutine  a0af8076
+  mutex      96cf2011
+  pipeline   23bf0d24
+  select     b1a36d25
+  semaphore  2bbd2a7a
+  worker     87eba76e

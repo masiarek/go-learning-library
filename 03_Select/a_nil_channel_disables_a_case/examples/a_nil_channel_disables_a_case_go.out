@@ -1,0 +1,13 @@
+1. A closed channel is always ready; a nil channel never is
+   closed channel: case chosen 1000 of 1000 times
+   nil channel:    case chosen 0 of 1000 times
+
+2. Merging two channels until both are closed
+   humidity reading 1
+   humidity reading 2
+   humidity reading 3
+   humidity reading 4
+   temperature reading 1
+   temperature reading 2
+   temperature reading 3
+   selects: 9 = 7 readings + 2 closes

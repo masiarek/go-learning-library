@@ -1,0 +1,13 @@
+sync.Once
+  calls to Do:            10
+  times loadConfig ran:   1
+  callers that saw :8080: 10
+sync.OnceValue
+  calls:                  10
+  times the function ran: 1
+  callers that got :8080: 10
+sync.OnceValues
+  calls:                  10
+  times the function ran: 1
+  error every caller got: strconv.Atoi: parsing "80x": invalid syntax
+  callers that got it:    10

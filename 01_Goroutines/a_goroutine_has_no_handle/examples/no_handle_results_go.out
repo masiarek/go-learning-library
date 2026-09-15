@@ -1,0 +1,6 @@
+line 1: quantity 12
+line 2: quantity 7
+line 3: error: strconv.Atoi: parsing "seven": invalid syntax
+line 4: quantity 30
+line 5: error: strconv.Atoi: parsing "": invalid syntax
+total of the lines that parsed: 49

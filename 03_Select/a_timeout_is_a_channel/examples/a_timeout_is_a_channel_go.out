@@ -1,0 +1,15 @@
+1. time.After: a timeout is a select case
+   answer arrived first: Oslo: 21 C
+   gave up on Lima
+   waited at least 1s:                   true
+   and less than the 3s Lima would take: true
+
+2. time.NewTimer: the same channel, with a Stop
+   cap(timer.C) = 0
+   nothing to receive after Stop
+
+3. time.NewTicker: a channel that delivers again and again
+   tick 1
+   tick 2
+   tick 3
+   no tick after Stop
