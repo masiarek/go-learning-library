@@ -23,6 +23,12 @@ A Go library in the same format as its siblings: one idea per page, every claim 
 
 Seven background agents, one per chapter, each verifying every example five or more times, in Docker, and with `-race`; the main session integrated NAV_ORDER, the front pages and CI, and committed. Their reports noted: `closing_a_receive_only_channel_sh.out` records the compiler's exact wording (a patch release could reword it); lessons 02/`all_goroutines_are_asleep` and 05/`a_leaked_goroutine_never_ends` each take about 2 s.
 
+## How the advanced chapters were written (2026-09-23)
+
+Adam asked for "advanced topics … using the folder tree, topics accessible on the left". Ten background agents, one per chapter 09–18, each from one shared brief (the page shape plus, per chapter, a `## Practice` kata with a verified solution on every lesson and three companion pages: `<topic>_compiler_errors`, `<topic>_vet_and_lints`, `<topic>_resources`). Slugs were fixed in the brief so agents could cross-link chapters still being written. Each agent verified every example five to twenty times and once in Docker `golang:1.25` (Debian: has bash and gcc), and did not commit; the main session added `NAV_ORDER`, the front pages, `navigation.expand` in `mkdocs.yml` (every chapter open in the sidebar), gated and pushed. Four agents were cut off by a spend limit mid-chapter and resumed by message with their context intact.
+
+Things the agents measured that the plan had wrong, kept on the pages: the `any` operator errors have three wordings, not one; vet's `stdmethods` does not check `String`/`Error` (the compiler does, at the point of use); `testing.AllocsPerRun` is fooled by constant folding (`//go:noinline` feeders); `strings.Lines`/`SplitSeq` are single-use; a `defer` in a range-over-func body inside an *inlined* function literal runs at the caller's return on go1.25.5 and go1.25.14 (demo only, not a key); `-d=checkptr` does not flag misaligned reads of pointer-free types. *Effective Go Recipes* is by Miki Tebeka.
+
 ## Working with Adam
 
 - **Be self-driven**: build, verify, commit, push, then report — flag only what is genuinely uncertain.

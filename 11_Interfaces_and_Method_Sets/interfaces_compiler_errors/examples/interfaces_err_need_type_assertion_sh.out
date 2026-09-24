@@ -1,0 +1,4 @@
+$ go build unbox.go
+# command-line-arguments
+./unbox.go:7:20: cannot use settings["retries"] (map index expression of interface type any) as int value in variable declaration: need type assertion
+exit status 1

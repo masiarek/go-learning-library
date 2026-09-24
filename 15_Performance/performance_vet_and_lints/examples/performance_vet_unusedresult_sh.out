@@ -1,0 +1,9 @@
+$ go mod init example
+$ go vet .
+# example
+# [example]
+./main.go:15:2: result of (*strings.Builder).String call not used
+exit status 1
+$ sed -i.bak "s/^\tb.String() .*/\tline = b.String()/" main.go && go vet . && go run .
+"order:42"
+exit status 0

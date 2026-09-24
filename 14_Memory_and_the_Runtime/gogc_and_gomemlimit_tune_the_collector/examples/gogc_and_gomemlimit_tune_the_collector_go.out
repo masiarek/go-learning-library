@@ -1,0 +1,10 @@
+SetGCPercent(50) returned the default: 100
+SetGCPercent(100) returned what was just set: 50
+SetMemoryLimit(-1) leaves the limit alone and returns math.MaxInt64: true
+runtime.GC() increased NumGC: true
+SetGCPercent(-1) turns the collector off; it returned: 100
+collector off, no limit: 256 MiB of garbage ran a collection: false
+SetMemoryLimit(64<<20) returned math.MaxInt64: true
+collector off, 64 MiB limit: 256 MiB of garbage ran a collection: true
+SetMemoryLimit(-1) now returns: 67108864
+SetGCPercent(100) returned the -1 that was in force: -1

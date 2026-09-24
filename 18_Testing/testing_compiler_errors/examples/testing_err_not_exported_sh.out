@@ -1,0 +1,7 @@
+$ go mod init example
+$ go test
+# example_test [example.test]
+./stock_test.go:10:11: name onHand not exported by package stock
+./stock_test.go:13:11: undefined: stock.Onhand (but have OnHand)
+FAIL	example [build failed]
+exit status 1

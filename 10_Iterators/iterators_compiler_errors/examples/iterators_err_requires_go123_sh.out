@@ -1,0 +1,9 @@
+$ go mod init example
+$ go mod edit -go=1.22
+$ go build .
+# example
+./main.go:10:17: cannot range over Readings (value of type func(yield func(int) bool)): requires go1.23 or later (-lang was set to go1.22; check go.mod)
+exit status 1
+$ go mod edit -go=1.23
+$ go build .
+exit status 0

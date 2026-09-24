@@ -13,7 +13,7 @@
 # them keep working.
 
 site_name: Go — Learning Library
-site_description: Go, starting with its concurrency — goroutines, channels, select, sync, context, and the patterns and tools built on them — one idea per page, every claim backed by a program that runs and is checked against its recorded output in CI.
+site_description: Go, starting with its concurrency — goroutines, channels, select, sync, context, patterns, testing — and going on to the advanced language — generics, iterators, interfaces, errors, defer, memory, performance, reflection, the build, the testing package — one idea per page, every claim backed by a program that runs and is checked against its recorded output in CI.
 site_url: https://masiarek.github.io/go-learning-library/
 repo_url: https://github.com/masiarek/go-learning-library
 repo_name: masiarek/go-learning-library
@@ -50,6 +50,7 @@ theme:
     logo: material/language-go
   features:
     - navigation.indexes    # a folder's README.md becomes its section landing page
+    - navigation.expand     # every chapter open in the sidebar: a topic is one click away, never hidden behind a fold
     - navigation.top
     - navigation.footer
     - search.suggest

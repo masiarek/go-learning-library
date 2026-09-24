@@ -1,0 +1,29 @@
+$ gofmt -d pricing_fast.go   # no blank line after //go:build
+diff pricing_fast.go.orig pricing_fast.go
+--- pricing_fast.go.orig
++++ pricing_fast.go
+@@ -1,4 +1,5 @@
+ //go:build fast
++
+ package main
+ 
+ func pricing() string { return "fast" }
+$ go list -f '{{.GoFiles}} ignored={{.IgnoredGoFiles}}' .
+[main.go] ignored=[pricing_fast.go]
+$ gofmt -d pricing_fast.go   # only the old +build line
+diff pricing_fast.go.orig pricing_fast.go
+--- pricing_fast.go.orig
++++ pricing_fast.go
+@@ -1,3 +1,4 @@
++//go:build fast
+ // +build fast
+ 
+ package main
+$ go vet .
+exit status 0
+$ go list -f '{{.GoFiles}} ignored={{.IgnoredGoFiles}}' .
+[main.go] ignored=[pricing_fast.go]
+$ gofmt -w pricing_fast.go && gofmt -l . && head -3 pricing_fast.go
+//go:build fast
+// +build fast
+

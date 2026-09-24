@@ -1,0 +1,13 @@
+$ go mod init example
+$ go mod edit -go=1.22
+$ go build .
+exit status 0
+$ go vet .
+# example
+# [example]
+./main.go:10:35: iter.Seq requires go1.23 or later (module is go1.22)
+./main.go:21:21: slices.Collect requires go1.23 or later (module is go1.22)
+exit status 1
+$ go mod edit -go=1.23
+$ go vet .
+exit status 0

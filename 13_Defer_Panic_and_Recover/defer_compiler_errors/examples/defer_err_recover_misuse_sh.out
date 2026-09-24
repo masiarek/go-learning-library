@@ -1,0 +1,5 @@
+$ go build recover_misuse.go
+# command-line-arguments
+./recover_misuse.go:4:13: recover (built-in) must be called
+./recover_misuse.go:6:8: invalid operation: too many arguments for recover("invoice 18 has no customer") (expected 0, found 1)
+exit status 1

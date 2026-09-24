@@ -1,0 +1,12 @@
+unsafe.Sizeof(any)     = 16
+unsafe.Sizeof(error)   = 16
+unsafe.Sizeof(uintptr) = 8 -- so an interface is two words
+nil any:              type word nil? true  data word nil? true
+any holding int 7:    type word nil? false  data word points at a 7? true  at the variable quantity? false
+  after quantity = 8, the any still holds 7 -- the data word points at a copy
+any holding *Order:   data word == the pointer itself? true
+two anys holding ints: same type word? true  same data word? false
+error and any holding the same *ValidationError: same data word? true  same type word? false (an itab for error, a type for any)
+any(7) == any(7)          true
+any(int64(7)) == any(7)   false
+any([]int{1}) == any([]int{1}) panics: runtime error: comparing uncomparable type []int

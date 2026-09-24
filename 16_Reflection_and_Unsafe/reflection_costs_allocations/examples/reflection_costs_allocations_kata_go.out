@@ -1,0 +1,5 @@
+reflect.DeepEqual(left, right) 2
+left == right                0
+left.Equal(right)            0
+all three agree: true
+keep: == (the type is comparable); DeepEqual is for slices and maps

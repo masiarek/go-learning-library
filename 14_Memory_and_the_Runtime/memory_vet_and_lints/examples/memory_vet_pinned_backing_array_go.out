@@ -1,0 +1,5 @@
+heap before the read is under 8 MiB: true
+kept whole[:2]: len 2  cap 67108864
+  heap after collection is over 32 MiB: true
+kept a copy:    len 2  cap 2
+  heap after collection is under 8 MiB: true

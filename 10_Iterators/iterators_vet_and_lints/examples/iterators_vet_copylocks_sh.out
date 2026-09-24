@@ -1,0 +1,8 @@
+$ go vet copies.go
+# command-line-arguments
+# [command-line-arguments]
+./copies.go:17:9: range var a copies lock: command-line-arguments.Account contains sync.Mutex
+./copies.go:20:6: range var a copies lock: command-line-arguments.Account contains sync.Mutex
+exit status 1
+$ go vet indexes.go
+exit status 0

@@ -1,0 +1,8 @@
+$ go mod init example
+$ go build ./...
+exit status 0
+$ go vet ./...
+# example
+# [example]
+./main.go:12:17: impossible type assertion: no type can implement both example.Closer and example.Shutdowner (conflicting types for Close method)
+exit status 1

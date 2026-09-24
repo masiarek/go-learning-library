@@ -1,0 +1,14 @@
+$ go env GOFLAGS
+
+$ go env -w GOFLAGS=-trimpath
+$ cat "$GOENV"
+GOFLAGS=-trimpath
+$ go env GOFLAGS
+-trimpath
+$ go build -o configured . && cmp trimmed configured
+identical: yes
+$ go env -u GOFLAGS && go env GOFLAGS
+
+$ go env -w NOTAVAR=1
+go: unknown go command variable NOTAVAR
+exit status 1

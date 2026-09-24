@@ -1,0 +1,11 @@
+an Order built, used and dropped in one frame:     0
+a pointer to a local, returned and stored:         1
+a closure that captures its counter:               2
+an int64 of 1000 stored in an interface:           1
+an int64 of 7 stored in an interface:              0
+make([]int, 1000), constant size, used here:       0
+make([]int, 100000), constant size, used here:     1
+make([]int, n) with n = 4 at run time:             0
+make([]int, n) with n = 1000 at run time:          1
+append 4 orders to a slice with room for 4:        0
+append 5 orders to a slice with room for 4:        1

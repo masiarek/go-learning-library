@@ -1,0 +1,8 @@
+$ go mod init example
+$ go test
+# example
+# [example]
+./stock_test.go:9:30: fuzzing arguments can only have the following types: string, bool, float32, float64, int, int8, int16, int32, int64, uint, uint8, uint16, uint32, uint64, []byte
+./stock_test.go:13:18: the first parameter of a fuzz target must be *testing.T
+FAIL	example [build failed]
+exit status 1

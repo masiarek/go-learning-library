@@ -1,0 +1,8 @@
+$ go mod init example
+$ go test -v
+=== RUN   TestBins
+--- FAIL: TestBins
+panic: assignment to entry in nil map [recovered, repanicked]
+exit status 2
+FAIL	example
+exit status 1

@@ -1,0 +1,13 @@
+$ gofmt -l .
+$ go run .
+notes:         notes/drafts/roadmap.txt
+notes:         notes/release.txt
+notes/*:       notes/.swap
+notes/*:       notes/_draft.txt
+notes/*:       notes/drafts/roadmap.txt
+notes/*:       notes/release.txt
+all:notes:     notes/.swap
+all:notes:     notes/_draft.txt
+all:notes:     notes/drafts/_next.txt
+all:notes:     notes/drafts/roadmap.txt
+all:notes:     notes/release.txt

@@ -1,0 +1,4 @@
+$ go build method.go
+# command-line-arguments
+./method.go:14:11: invalid operation: cannot call reflect.ValueOf(inv).MethodByName("Total") (value of struct type reflect.Value): reflect.Value is not a function
+exit status 1

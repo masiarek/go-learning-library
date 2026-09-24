@@ -1,0 +1,6 @@
+$ go build assertions.go
+# command-line-arguments
+./assertions.go:9:14: impossible type assertion: s.(Order)
+	Order does not implement fmt.Stringer (missing method String)
+./assertions.go:13:14: invalid operation: quantity (variable of type int) is not an interface
+exit status 1

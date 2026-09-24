@@ -1,0 +1,16 @@
+$ go mod init example
+$ go vet main.go
+# command-line-arguments
+# [command-line-arguments]
+./main.go:12:18: method WriteTo(w io.Writer) error should have signature WriteTo(io.Writer) (int64, error)
+./main.go:13:18: method MarshalJSON() []byte should have signature MarshalJSON() ([]byte, error)
+exit status 1
+$ go build main.go use.go
+# command-line-arguments
+./use.go:5:22: cannot use Invoice{} (value of struct type Invoice) as fmt.Stringer value in variable declaration: Invoice does not implement fmt.Stringer (wrong type for method String)
+		have String() int
+		want String() string
+./use.go:6:15: cannot use Invoice{} (value of struct type Invoice) as error value in variable declaration: Invoice does not implement error (wrong type for method Error)
+		have Error() int
+		want Error() string
+exit status 1

@@ -1,0 +1,9 @@
+Max(3, 7) = 7
+Max("pear", "apple") = pear
+Max(Celsius(21), Celsius(19)) = 21
+Max(2.5, NaN) = NaN  Max(NaN, 2.5) = 2.5  builtin max(2.5, NaN) = NaN
+Sum([]int{1, 2, 3}) = 6
+Sum([]float64{0.5, 0.25}) = 0.75
+Sum([]Celsius{21.5, 19}) = 40.5
+Contains(readings, 19) = true
+Contains(names, "kiwi") = false

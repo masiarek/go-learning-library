@@ -1,0 +1,4 @@
+$ go build wallet.go
+# command-line-arguments
+./wallet.go:15:9: cannot use w (variable of struct type Wallet) as Depositor value in argument to payday: Wallet does not implement Depositor (method Deposit has pointer receiver)
+exit status 1

@@ -1,0 +1,17 @@
+$ go build settings.go
+$ ./settings
+GC percent at startup: 100
+memory limit at startup: 9223372036854775807
+$ GOGC=50 ./settings
+GC percent at startup: 50
+memory limit at startup: 9223372036854775807
+$ GOGC=off ./settings
+GC percent at startup: -1
+memory limit at startup: 9223372036854775807
+$ GOMEMLIMIT=64MiB ./settings
+GC percent at startup: 100
+memory limit at startup: 67108864
+$ GOGC=off GOMEMLIMIT=1GiB ./settings
+GC percent at startup: -1
+memory limit at startup: 1073741824
+exit status 0

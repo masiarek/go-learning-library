@@ -1,0 +1,21 @@
+Error() of the joined error:
+customer is empty
+unknown sku chair
+quantity 0: quantity must be positive
+as one quoted string: "customer is empty\nunknown sku chair\nquantity 0: quantity must be positive"
+
+errors.Is(err, ErrNoCustomer)  = true
+errors.Is(err, ErrBadQuantity) = true
+errors.As(err, &unknown)       = true -> SKU: chair
+errors.Unwrap(err) == nil      = true
+Unwrap() []error holds         3 errors
+
+a valid order         : <nil>
+errors.Join() == nil  : true
+Join(nil, nil) == nil : true
+
+two %w   : order 12: customer is empty; quantity must be positive
+errors.Is(both, ErrNoCustomer), errors.Is(both, ErrBadQuantity) = true true
+errors.Unwrap(both) == nil = true
+one %w   : order 13: customer is empty
+errors.Unwrap(one)         = customer is empty

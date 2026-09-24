@@ -1,0 +1,6 @@
+$ go build addresses.go
+# command-line-arguments
+./addresses.go:9:14: invalid operation: cannot take address of orders["a-1"] (map index expression of struct type Order)
+./addresses.go:10:15: invalid operation: cannot take address of newest() (value of struct type Order)
+./addresses.go:11:16: invalid operation: cannot take address of 5 (untyped int constant)
+exit status 1

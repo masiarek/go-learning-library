@@ -1,0 +1,5 @@
+$ go build wrong_element.go
+# command-line-arguments
+./wrong_element.go:18:14: cannot use readings (variable of func type iter.Seq[int]) as iter.Seq[string] value in argument to printLabels
+./wrong_element.go:19:32: cannot use readings (variable of func type iter.Seq[int]) as iter.Seq[string] value in variable declaration
+exit status 1

@@ -1,0 +1,23 @@
+$ go vet .   # //go:build after the package clause
+# example
+# [example]
+./pricing_fast.go:3:1: misplaced //go:build comment
+exit status 1
+$ go vet .   # //go:build inside a block comment
+# example
+# [example]
+./pricing_fast.go:2:1: misplaced //go:build comment
+exit status 1
+$ go vet .   # the old +build line disagrees
+# example
+# [example]
+./pricing_fast.go:2:1: +build lines do not match //go:build condition
+exit status 1
+$ go vet .   # a space after //
+exit status 0
+$ go list -f '{{.GoFiles}}' .
+[main.go pricing_fast.go]
+$ go vet .   # the good version
+exit status 0
+$ go list -f '{{.GoFiles}}' .
+[main.go]

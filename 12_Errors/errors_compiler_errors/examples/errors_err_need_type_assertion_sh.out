@@ -1,0 +1,4 @@
+$ go build need_assertion.go
+# command-line-arguments
+./need_assertion.go:13:26: cannot use err (variable of interface type error) as *NotFoundError value in variable declaration: need type assertion
+exit status 1

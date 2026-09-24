@@ -1,0 +1,9 @@
+$ go build ambiguous.go
+# command-line-arguments
+./ambiguous.go:21:16: ambiguous selector c.Name
+./ambiguous.go:22:16: ambiguous selector c.Describe
+exit status 1
+$ go run resolved.go
+Ann Lee
+person Ann Lee at Northwind
+exit status 0

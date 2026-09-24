@@ -1,0 +1,2 @@
+INV-18: total = 2449, err = <nil>, errors.Is(errBadLine) = false
+INV-19: total = 0, err = loading INV-19: bad line: "shipping 450", errors.Is(errBadLine) = true

@@ -1,0 +1,19 @@
+validateTyped(10):
+  err == nil                       false
+  %T                               *main.ValidationError
+  %v                               <nil>
+  err == (*ValidationError)(nil)   true
+  reflect Kind(), IsNil()          ptr, true
+  err.Error() panicked with        runtime error: invalid memory address or nil pointer dereference
+validate(10):
+  err == nil                       true
+  %T                               <nil>
+  %v                               <nil>
+validate(-5):
+  err == nil                       false
+  %T                               *main.ValidationError
+  %v                               invalid amount
+the diagnostic, over three results:
+  isNilPointerInside true   err == nil false  *main.ValidationError
+  isNilPointerInside false  err == nil true   <nil>
+  isNilPointerInside false  err == nil false  *main.ValidationError

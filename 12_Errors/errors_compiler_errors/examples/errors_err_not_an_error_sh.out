@@ -1,0 +1,5 @@
+$ go build text_is_not_an_error.go
+# command-line-arguments
+./text_is_not_an_error.go:12:20: cannot use "order not found" (constant of type string) as error value in argument to errors.Is: string does not implement error (missing method Error)
+./text_is_not_an_error.go:15:18: invalid operation: err.Error == "order not found" (mismatched types func() string and untyped string)
+exit status 1

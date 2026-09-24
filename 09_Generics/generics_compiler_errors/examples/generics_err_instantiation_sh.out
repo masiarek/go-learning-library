@@ -1,0 +1,6 @@
+$ go build uninstantiated.go
+# command-line-arguments
+./uninstantiated.go:13:13: cannot use generic function Map without instantiation
+./uninstantiated.go:14:15: cannot use generic type Stack[T any] without instantiation
+./uninstantiated.go:15:12: not enough type arguments for type Pair: have 1, want 2
+exit status 1

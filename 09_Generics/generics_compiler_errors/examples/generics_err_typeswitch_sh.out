@@ -1,0 +1,8 @@
+$ go build typeswitch.go
+# command-line-arguments
+./typeswitch.go:4:9: cannot use type switch on type parameter value v (variable of type T constrained by any)
+./typeswitch.go:8:14: invalid operation: cannot use type assertion on type parameter value v (variable of type T constrained by any)
+exit status 1
+$ go run typeswitch_fixed.go
+int string other
+exit status 0

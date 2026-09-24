@@ -1,0 +1,29 @@
+$ go mod init example
+$ go test -v -shuffle=1 -run 'Crates|Pallets|Bins'
+-test.shuffle 1
+=== RUN   TestCrates
+=== RUN   TestPallets
+=== RUN   TestBins
+ok  	example
+exit status 0
+$ go test -v -shuffle=7 -run 'Crates|Pallets|Bins'
+-test.shuffle 7
+=== RUN   TestPallets
+=== RUN   TestBins
+=== RUN   TestCrates
+ok  	example
+exit status 0
+$ go test -v -run TestFullImport
+=== RUN   TestFullImport
+    stock_test.go:13: importing every delivery note
+--- PASS: TestFullImport
+PASS
+ok  	example
+exit status 0
+$ go test -v -short -run TestFullImport
+=== RUN   TestFullImport
+    stock_test.go:11: the full import takes minutes; skipped under -short
+--- SKIP: TestFullImport
+PASS
+ok  	example
+exit status 0

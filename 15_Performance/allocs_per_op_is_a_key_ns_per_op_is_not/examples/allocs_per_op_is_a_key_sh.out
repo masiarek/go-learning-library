@@ -1,0 +1,13 @@
+$ go mod init example
+$ go test -bench=. -benchmem -benchtime=2000x -run='^$' >bench.txt
+$ awk '/allocs\/op$/ { sub(/-[0-9]+$/, "", $1); printf "%-30s %5s B/op %3s allocs/op\n", $1, $(NF-3), $(NF-1) }' bench.txt
+BenchmarkJoinWithPlus            880 B/op   8 allocs/op
+BenchmarkJoinWithBuilder         256 B/op   1 allocs/op
+BenchmarkJoinWithPlusOldLoop     880 B/op   8 allocs/op
+$ grep -E '^(PASS|FAIL|ok|Benchmark.* entered)' bench.txt
+PASS
+BenchmarkJoinWithPlus entered 1 time(s)
+BenchmarkJoinWithBuilder entered 1 time(s)
+BenchmarkJoinWithPlusOldLoop entered 2 time(s)
+ok  	example
+exit status 0

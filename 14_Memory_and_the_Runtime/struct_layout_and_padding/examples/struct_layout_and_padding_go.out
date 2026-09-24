@@ -1,0 +1,22 @@
+Padded {bool, int64, bool}: Sizeof 24  Alignof 8
+  Offsetof: Urgent 0  Cents 8  Paid 16
+Packed {int64, bool, bool}: Sizeof 16  Alignof 8
+  Offsetof: Cents 0  Urgent 8  Paid 9
+Mixed {int32, int64}: Sizeof 16  Offsetof At 8
+[1000]Padded: 24000 bytes   [1000]Packed: 16000 bytes
+TrailingMark {int64, struct{}}: 16   LeadingMark {struct{}, int64}: 8
+len(raw), an array sized by unsafe.Sizeof(Packed{}): 16
+
+type       Sizeof  Alignof
+bool            1        1
+int32           4        4
+int64           8        8
+int             8        8
+float64         8        8
+*Packed         8        8
+string         16        8
+[]byte         24        8
+any            16        8
+[3]int64       24        8
+struct{}        0        1
+[0]int64        0        8

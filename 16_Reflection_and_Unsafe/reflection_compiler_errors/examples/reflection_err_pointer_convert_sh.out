@@ -1,0 +1,4 @@
+$ go build bits.go
+# command-line-arguments
+./bits.go:7:24: cannot convert &x (value of type *int) to type *float64
+exit status 1

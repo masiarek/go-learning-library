@@ -1,0 +1,6 @@
+setField: need a pointer to a struct, got main.Order
+setField: main.Order has no field Weight
+setField: main.Order.discount is not settable (unexported)
+setField: cannot assign string to main.Order.Quantity (int)
+<nil> <nil>
+{Customer:Ada Lovelace Quantity:3 discount:0}

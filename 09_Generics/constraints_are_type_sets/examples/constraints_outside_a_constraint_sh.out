@@ -1,0 +1,6 @@
+$ go build outside.go
+# command-line-arguments
+./outside.go:23:17: cannot use type Quantity outside a type constraint: interface contains type constraints
+./outside.go:26:16: cannot use type Quantity outside a type constraint: interface contains type constraints
+./outside.go:28:19: in call to Total, T (type int) does not satisfy Quantity (missing method Unit)
+exit status 1

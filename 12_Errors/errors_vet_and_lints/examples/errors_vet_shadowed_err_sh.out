@@ -1,0 +1,14 @@
+$ go mod init example
+$ go vet .
+exit status 0
+$ go run .
+save: check failed: customer is empty
+save returned: <nil>
+exit status 0
+$ go vet -shadow .
+flag provided but not defined: -shadow
+usage: go vet [build flags] [-vettool prog] [vet flags] [packages]
+Run 'go help vet' for details.
+Run 'go tool vet help' for a full list of flags and analyzers.
+Run 'go tool vet -help' for an overview.
+exit status 2

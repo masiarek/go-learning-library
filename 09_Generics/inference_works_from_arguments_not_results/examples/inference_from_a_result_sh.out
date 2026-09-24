@@ -1,0 +1,6 @@
+$ go build from_result.go
+# command-line-arguments
+./from_result.go:19:22: in call to Zero, cannot infer T (declared at ./from_result.go:5:11)
+./from_result.go:20:13: cannot use generic function Map without instantiation
+./from_result.go:21:16: cannot infer U (declared at ./from_result.go:10:13)
+exit status 1

@@ -1,0 +1,4 @@
+$ go build map_field.go
+# command-line-arguments
+./map_field.go:7:2: cannot assign to struct field orders["a-1"].Qty in map
+exit status 1

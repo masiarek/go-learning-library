@@ -1,0 +1,8 @@
+$ go build classify.go
+# command-line-arguments
+./classify.go:9:7: impossible type switch case: Order
+	s (variable of interface type fmt.Stringer) cannot have dynamic type Order (missing method String)
+./classify.go:21:7: duplicate case int in type switch
+	./classify.go:17:7: previous case
+./classify.go:29:9: x declared and not used
+exit status 1

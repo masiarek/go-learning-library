@@ -1,0 +1,4 @@
+$ go build method.go
+# command-line-arguments
+./method.go:5:24: syntax error: method must have no type parameters
+exit status 1

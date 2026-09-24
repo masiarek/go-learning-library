@@ -1,0 +1,4 @@
+unsafe.Sizeof(Reading) = 24  unsafe.Sizeof(any) = 16
+allocations per store of a Reading:  1
+allocations per store of a *Reading: 0
+store *Reading: the data word holds the pointer, so nothing is copied to the heap per store

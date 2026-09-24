@@ -1,0 +1,7 @@
+doubledNamed() = 42, doubledUnnamed() = 21
+saveOrder(18, ok):   err = <nil>
+saveOrder(19, fail): err = saving order 19: disk full, errors.Is(errDiskFull) = true
+totalCents(1999 450) = 2449, err = <nil>
+totalCents(1999 12x) = 0, err = totalling prices: bad price "12x"
+writeOrders(normal):      err = <nil>
+writeOrders(close twice): err != nil = true, errors.Is(os.ErrClosed) = true

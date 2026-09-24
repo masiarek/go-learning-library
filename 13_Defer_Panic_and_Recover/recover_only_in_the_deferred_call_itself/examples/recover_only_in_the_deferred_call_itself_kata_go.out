@@ -1,0 +1,5 @@
+   shipped order 18
+ship:   err = <nil> | runtime.Error: false | errNoCustomer: false
+index:  err = index: bug: runtime error: index out of range [2] with length 0 | runtime.Error: true | errNoCustomer: false
+charge: err = charge: no customer on the order | runtime.Error: false | errNoCustomer: true
+print:  err = print: panic: printer offline | runtime.Error: false | errNoCustomer: false

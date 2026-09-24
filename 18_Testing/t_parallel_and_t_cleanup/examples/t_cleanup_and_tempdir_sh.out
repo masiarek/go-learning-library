@@ -1,0 +1,25 @@
+$ go mod init example
+$ go test -v
+=== RUN   TestCleanupOrder
+=== RUN   TestCleanupOrder/child
+    warehouse_test.go:14: child's body
+    warehouse_test.go:13: child's cleanup
+=== NAME  TestCleanupOrder
+    warehouse_test.go:16: parent's body ends
+    warehouse_test.go:11: cleanup 2: registered second
+    warehouse_test.go:10: cleanup 1: registered first, runs last
+--- PASS: TestCleanupOrder
+    --- PASS: TestCleanupOrder/child
+=== RUN   TestTempDir
+    warehouse_test.go:29: in Cleanup, the TempDir still exists: true
+--- PASS: TestTempDir
+=== RUN   TestTempDirIsGone
+    warehouse_test.go:36: after TestTempDir, its directory exists: false
+--- PASS: TestTempDirIsGone
+=== RUN   TestContextEndsBeforeCleanup
+    warehouse_test.go:42: in the body, ctx.Err() = <nil>
+    warehouse_test.go:41: in Cleanup, ctx.Err() = context canceled
+--- PASS: TestContextEndsBeforeCleanup
+PASS
+ok  	example
+exit status 0

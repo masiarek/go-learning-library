@@ -1,0 +1,15 @@
+describe: nil: no dynamic type at all
+describe: int 42            (x has static type int)
+describe: a sized int 42    (x has static type interface {})
+describe: a Stringer: "invoice 3" (x has static type fmt.Stringer)
+describe: an error: late
+describe: something else: main.Order (x has static type interface {})
+x.(string) two-value: "order-17", true
+x.(int)    two-value: 0, false (the zero value, and false)
+x.(int)    one-value panics: interface conversion: interface {} is string, not int
+nil.(int)  one-value panics: interface conversion: interface {} is nil, not int
+Order as fmt.Stringer, two-value: false
+Order as fmt.Stringer, one-value panics: interface conversion: main.Order is not fmt.Stringer: missing method String
+fmt.Stringer holding Invoice, asserted to *Invoice, panics: interface conversion: fmt.Stringer is main.Invoice, not *main.Invoice
+inside:  v = order-17 (changed inside the switch)
+outside: v = outer

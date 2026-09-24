@@ -1,0 +1,10 @@
+$ go build same_value.go
+$ ./same_value
+recovered: invoice 18 has no customer -- cannot handle it here, panicking again
+panic: invoice 18 has no customer [recovered, repanicked]
+exit status 2
+$ go build new_value.go
+$ ./new_value
+panic: invoice 18 has no customer [recovered]
+	panic: posting invoices: invoice 18 has no customer
+exit status 2

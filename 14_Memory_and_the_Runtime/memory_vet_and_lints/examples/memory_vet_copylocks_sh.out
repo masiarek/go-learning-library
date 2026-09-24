@@ -1,0 +1,11 @@
+$ cd bad && go mod init example && go vet .
+# example
+# [example]
+./account.go:14:9: Balance passes lock by value: example.Account contains sync.Mutex
+./account.go:20:17: snapshot passes lock by value: example.Account contains sync.Mutex
+./account.go:20:43: return copies lock value: example.Account contains sync.Mutex
+./account.go:24:12: assignment copies lock value to backup: example.Account contains sync.Mutex
+./account.go:25:42: call of snapshot copies lock value: example.Account contains sync.Mutex
+exit status 1
+$ cd good && go mod init example && go vet .
+exit status 0

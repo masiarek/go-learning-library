@@ -1,0 +1,37 @@
+$ go mod init example
+$ go test -v -parallel 4 -run 'TestWarehousesTogether$'
+=== RUN   TestWarehousesTogether
+=== RUN   TestWarehousesTogether/north
+=== PAUSE TestWarehousesTogether/north
+=== RUN   TestWarehousesTogether/south
+=== PAUSE TestWarehousesTogether/south
+=== RUN   TestWarehousesTogether/east
+=== PAUSE TestWarehousesTogether/east
+=== RUN   TestWarehousesTogether/west
+=== PAUSE TestWarehousesTogether/west
+=== NAME  TestWarehousesTogether
+    warehouse_test.go:41: parent: the loop is done; subtests running right now: 0
+=== CONT lines: 4
+    warehouse_test.go:38: checking east
+    warehouse_test.go:38: checking north
+    warehouse_test.go:38: checking south
+    warehouse_test.go:38: checking west
+    warehouse_test.go:42: parent's Cleanup: most subtests running at once: 4
+    --- PASS: TestWarehousesTogether/east
+    --- PASS: TestWarehousesTogether/north
+    --- PASS: TestWarehousesTogether/south
+    --- PASS: TestWarehousesTogether/west
+--- PASS: TestWarehousesTogether
+PASS
+ok  	example
+exit status 0
+$ go test -v -parallel 1 -run 'TestWarehousesOneAtATime$'
+=== PAUSE lines: 4
+=== CONT lines: 4
+    warehouse_test.go:57: parent's Cleanup: most subtests running at once: 1
+PASS
+ok  	example
+exit status 0
+$ go test -v -cpu 1,2 -run 'TestWarehousesOneAtATime$'
+the test ran 2 times, under the name TestWarehousesOneAtATime
+exit status 0

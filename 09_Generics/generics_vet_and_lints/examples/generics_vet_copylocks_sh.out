@@ -1,0 +1,9 @@
+$ cd bad && go vet .
+# example
+# [example]
+./main.go:13:9: Add passes lock by value: example.Counter[K] contains sync.Mutex
+./main.go:19:27: Size passes lock by value: example.Counter[K] contains sync.Mutex
+./main.go:24:19: call of Size copies lock value: example.Counter[string] contains sync.Mutex
+exit status 1
+$ cd good && go vet .
+exit status 0

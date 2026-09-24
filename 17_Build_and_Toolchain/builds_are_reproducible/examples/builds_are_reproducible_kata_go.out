@@ -1,0 +1,3 @@
+same directory, -trimpath twice, identical: true
+other directory, -trimpath, identical:      true
+both directories, no -trimpath, identical:  false

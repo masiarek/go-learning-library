@@ -1,0 +1,16 @@
+value boxed into any     allocations per boxing
+int 7                    0
+int 255                  0
+int 256                  1
+int 300                  1
+int -1                   1
+byte 255                 0
+float64 0                0
+float64 3.14             1
+string ""                0
+string "invoice"         1
+Order{1, 2}              1
+struct{}{}               0
+*Order                   0
+nil                      0
+the constant 300         0

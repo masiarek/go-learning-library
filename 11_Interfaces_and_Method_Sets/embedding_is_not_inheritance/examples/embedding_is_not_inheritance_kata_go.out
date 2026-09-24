@@ -1,0 +1,4 @@
+ascending:  [{INV-3 75} {INV-1 120} {INV-2 250} {INV-4 300}]
+descending: [{INV-4 300} {INV-2 250} {INV-1 120} {INV-3 75}]
+sort.IsSorted(descending(invoices)): true
+sort.IsSorted(invoices):             false

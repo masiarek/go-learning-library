@@ -1,0 +1,5 @@
+$ go vet after_panic.go
+# command-line-arguments
+# [command-line-arguments]
+./after_panic.go:8:3: unreachable code
+exit status 1

@@ -1,0 +1,8 @@
+$ go vet lost.go
+# command-line-arguments
+# [command-line-arguments]
+./lost.go:9:2: the cancel function is not used on all paths (possible context leak)
+./lost.go:11:3: this return statement may be reached without using the cancel var defined on line 9
+exit status 1
+$ go vet kept.go
+exit status 0

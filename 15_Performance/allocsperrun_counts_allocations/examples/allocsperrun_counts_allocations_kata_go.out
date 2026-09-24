@@ -1,0 +1,3 @@
+fmt.Sprintf("%s:%d", item, quantity): 2
+append + strconv.AppendInt into a reused buffer: 0
+same text: true

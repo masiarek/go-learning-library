@@ -1,0 +1,12 @@
+$ go build -o report .   # //go:build after the package clause
+# example
+./pricing_fast.go:3:3: misplaced compiler directive
+exit status 1
+$ go build -o report .   # two //go:build lines
+pricing_fast.go: multiple //go:build comments
+exit status 1
+$ go build -o report .   # an expression that does not parse
+pricing_fast.go: parsing //go:build line: unexpected end of expression
+exit status 1
+$ go build -o report .
+exit status 0

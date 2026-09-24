@@ -1,0 +1,9 @@
+defer in the loop, 1000 opens:
+  end of the loop, still inside the function: closed 0 of 1000
+  after the function returned: closed 1000 of 1000, most open at once: 1000
+a helper per iteration, 1000 opens:
+  end of the loop, still inside the function: closed 1000 of 1000
+  after the function returned: closed 1000 of 1000, most open at once: 1
+a function literal per iteration, 1000 opens:
+  end of the loop, still inside the function: closed 1000 of 1000
+  after the function returned: closed 1000 of 1000, most open at once: 1

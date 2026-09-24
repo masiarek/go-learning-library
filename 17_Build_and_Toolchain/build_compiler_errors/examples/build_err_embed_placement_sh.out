@@ -1,0 +1,16 @@
+$ go build -o report .   # the var is inside a function
+# example
+./main.go:9:4: go:embed cannot apply to var inside func
+exit status 1
+$ go build -o report .   # nothing imports embed
+# example
+./main.go:5:3: go:embed requires import "embed" (or import _ "embed", if package is not used)
+exit status 1
+$ go build -o report .   # the var has an initialiser
+# example
+./main.go:8:3: go:embed cannot apply to var with initializer
+exit status 1
+$ go build -o report .   # the var is an int
+# example
+./main.go:9:5: go:embed cannot apply to var of type int
+exit status 1

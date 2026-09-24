@@ -1,0 +1,7 @@
+--- PASS: ExampleInvoice_total
+--- FAIL: ExampleInvoice_total_wrong
+got:
+13900
+want:
+13000
+--- PASS: ExampleInvoice_printLines

@@ -1,0 +1,21 @@
+$ go vet ./orders
+# example/orders
+# [example/orders]
+orders/orders_test.go:5:6: Testcount has malformed name: first letter after 'Test' must not be lowercase
+orders/orders_test.go:7:1: ExampleNoSuch refers to unknown identifier: NoSuch
+orders/orders_test.go:9:1: ExampleInvoice_Pay refers to unknown field or method: Invoice.Pay
+orders/orders_test.go:11:1: ExampleCount should be niladic
+exit status 1
+$ go test ./orders
+# example/orders
+# [example/orders]
+orders/orders_test.go:5:6: Testcount has malformed name: first letter after 'Test' must not be lowercase
+orders/orders_test.go:7:1: ExampleNoSuch refers to unknown identifier: NoSuch
+orders/orders_test.go:9:1: ExampleInvoice_Pay refers to unknown field or method: Invoice.Pay
+orders/orders_test.go:11:1: ExampleCount should be niladic
+FAIL	example/orders [build failed]
+FAIL
+exit status 1
+$ go vet ./orders && go test ./orders
+ok  	example/orders
+exit status 0

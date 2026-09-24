@@ -1,0 +1,11 @@
+$ go build -o report .
+# example
+./scratch.go:3:6: main redeclared in this block
+	./main.go:5:6: other declaration of main
+exit status 1
+$ go build -o report .
+found packages main (main.go) and scratch (scratch.go) in $dir
+exit status 1
+$ rm scratch.go && go build -o report . && ./report
+orders: 3
+exit status 0

@@ -1,0 +1,5 @@
+$ go build value.go
+# command-line-arguments
+./value.go:10:14: cannot use quantity (variable of struct type reflect.Value) as int value in variable declaration
+./value.go:11:29: cannot convert 3 (untyped int constant) to type struct{typ_ *abi.Type; ptr unsafe.Pointer; reflect.flag}
+exit status 1

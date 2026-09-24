@@ -1,0 +1,5 @@
+version: dev
+package path: command-line-arguments
+stamped with -X: false
+compiler: gc
+build mode: exe

@@ -1,0 +1,6 @@
+$ go mod init example
+$ go vet
+# example
+# [example]
+./stock_test.go:14:10: WaitGroup.Add called from inside new goroutine
+exit status 1

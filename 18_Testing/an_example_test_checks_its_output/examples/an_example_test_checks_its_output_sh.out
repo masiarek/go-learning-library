@@ -1,0 +1,22 @@
+$ go mod init example
+$ go test -v
+=== RUN   ExampleOrder_Total
+--- PASS: ExampleOrder_Total
+=== RUN   ExampleOrder_Total_wrongComment
+--- FAIL: ExampleOrder_Total_wrongComment
+got:
+2500
+want:
+2400
+=== RUN   ExampleOrder_PrintUnits
+--- PASS: ExampleOrder_PrintUnits
+FAIL
+exit status 1
+FAIL	example
+exit status 1
+$ go test -list .
+ExampleOrder_Total
+ExampleOrder_Total_wrongComment
+ExampleOrder_PrintUnits
+ok  	example
+exit status 0

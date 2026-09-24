@@ -1,0 +1,20 @@
+$ go mod init example
+$ go test -v -run 'TestRegion$|TestRegionAfter'
+=== RUN   TestRegion
+    region_test.go:10: WAREHOUSE_REGION = north
+--- PASS: TestRegion
+=== RUN   TestRegionAfter
+    region_test.go:14: after TestRegion, WAREHOUSE_REGION = ""
+--- PASS: TestRegionAfter
+PASS
+ok  	example
+exit status 0
+$ go test -v -run TestRegionParallel
+=== RUN   TestRegionParallel
+=== PAUSE TestRegionParallel
+=== CONT  TestRegionParallel
+--- FAIL: TestRegionParallel
+panic: testing: test using t.Setenv or t.Chdir can not use t.Parallel [recovered, repanicked]
+exit status 2
+FAIL	example
+exit status 1

@@ -1,0 +1,14 @@
+-- parts with fewer than 10 left, in alphabetical order
+nut (4 left)
+rivet (2 left)
+washer (7 left)
+-- columns of a CSV header, counted without a slice
+column 1: order
+column 2: customer
+column 3: part
+column 4: quantity
+columns: 4
+-- orders in batches of three
+batch of 3: order-1 .. order-3
+batch of 3: order-4 .. order-6
+batch of 1: order-7 .. order-7

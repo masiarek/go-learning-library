@@ -1,0 +1,5 @@
+weak.Value() while s is in use: true
+after a GC while s is still in use: cleanup ran: false  weak is nil: false
+after the last use of s: cleanup ran: true  with id: 7
+weak pointer is nil: true
+finalizer ran: true  with id: 8

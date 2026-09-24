@@ -1,0 +1,15 @@
+$ go mod init example
+$ go vet ./...
+# example
+# [example]
+./roundtrip.go:23:25: possible misuse of unsafe.Pointer
+exit status 1
+$ go build -o roundtrip . && ./roundtrip
+first reading through the round trip: {1 20.5}
+exit status 0
+$ go build -gcflags=all=-d=checkptr -o roundtrip_checkptr . && ./roundtrip_checkptr
+fatal error: checkptr: pointer arithmetic result points to invalid allocation
+exit status 2
+$ go build -race -o roundtrip_race . && ./roundtrip_race
+fatal error: checkptr: pointer arithmetic result points to invalid allocation
+exit status 2

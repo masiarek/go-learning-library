@@ -1,0 +1,7 @@
+6 orders from 3 channels in 9 rounds of reflect.Select
+  east-order-1
+  east-order-2
+  north-order-1
+  west-order-1
+  west-order-2
+  west-order-3

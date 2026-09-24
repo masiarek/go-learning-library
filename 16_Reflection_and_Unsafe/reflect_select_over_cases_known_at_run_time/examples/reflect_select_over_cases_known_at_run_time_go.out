@@ -1,0 +1,12 @@
+sensor 0 ready:  chosen 0, value 20, recvOK true
+sensor 1 ready:  chosen 1, value 21, recvOK true
+sensor 2 ready:  chosen 2, value 22, recvOK true
+sensor 3 ready:  chosen 3, value 23, recvOK true
+all four ready:  received [30 31 32 33]
+nothing ready:   chosen 4 (the default), recv.IsValid false, recvOK false
+sensor 2 closed: chosen 2, value 0, recvOK false
+sensor 2 nil:    chosen 4 (the default)
+sensor 2 zero:   chosen 4 (the default)
+send case:       chosen 0, recv.IsValid false, recvOK false, delivered "sensor 2 offline"
+allocations per call, select statement, 2 cases: 0
+allocations per call, reflect.Select,   2 cases: 2

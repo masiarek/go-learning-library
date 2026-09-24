@@ -1,0 +1,12 @@
+$ git init && git add . && git commit -m "invoice printer"
+$ go build -trimpath -o stamped . && cmp "$plain/outside" stamped
+identical: no
+$ go version -m stamped | grep vcs
+	build	vcs=git
+	build	vcs.revision=...
+	build	vcs.time=...
+	build	vcs.modified=false
+$ go build -trimpath -buildvcs=false -o unstamped . && cmp "$plain/outside" unstamped
+identical: yes
+$ echo "// a change that is not committed" >>main.go && go build -trimpath -o dirty . && go version -m dirty | grep vcs.modified
+	build	vcs.modified=true

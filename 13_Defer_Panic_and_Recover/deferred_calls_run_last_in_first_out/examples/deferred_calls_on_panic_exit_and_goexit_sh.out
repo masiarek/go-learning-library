@@ -1,0 +1,16 @@
+$ go build panics.go
+$ ./panics
+main: posting invoice 18
+deferred: unlock the ledger
+panic: invoice 18 has no customer
+exit status 2
+$ go build exits.go
+$ ./exits
+main: posting invoice 18, then os.Exit(3)
+exit status 3
+$ go build goexit.go
+$ ./goexit
+main: calling runtime.Goexit
+deferred: unlock the ledger
+fatal error: no goroutines (main called runtime.Goexit) - deadlock!
+exit status 2

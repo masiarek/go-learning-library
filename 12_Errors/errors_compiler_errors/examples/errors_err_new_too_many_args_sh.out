@@ -1,0 +1,6 @@
+$ go build new_with_args.go
+# command-line-arguments
+./new_with_args.go:7:42: too many arguments in call to errors.New
+	have (string, int)
+	want (string)
+exit status 1

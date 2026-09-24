@@ -1,0 +1,12 @@
+countdown: yielding 3
+loop: got 3
+countdown: yielding 2
+loop: got 2
+countdown: yielding 1
+loop: got 1
+countdown: done
+loop: sensor 0 is hall
+loop: sensor 1 is garage
+loop: sensor 2 is attic
+by hand: sensor 0 is hall
+by hand: sensor 1 is garage

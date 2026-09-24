@@ -1,0 +1,9 @@
+$ go vet dropped.go
+# command-line-arguments
+# [command-line-arguments]
+./dropped.go:11:4: result of fmt.Errorf call not used
+exit status 1
+$ go vet assigned.go
+exit status 0
+$ go run assigned.go
+saving order 18: disk full

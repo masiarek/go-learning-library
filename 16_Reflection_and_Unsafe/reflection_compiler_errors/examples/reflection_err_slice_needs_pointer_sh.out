@@ -1,0 +1,4 @@
+$ go build view.go
+# command-line-arguments
+./view.go:10:23: invalid argument: packet (variable of type []byte) is not a pointer
+exit status 1

@@ -1,0 +1,14 @@
+-- range over an infinite sequence, with a break
+loop: got 1
+loop: got 2
+loop: got 3
+produced: 4
+-- compose Filter and Take: nothing runs until the range
+built the pipeline; produced: 0
+loop: got 7
+loop: got 14
+loop: got 21
+loop: got 28
+produced: 28
+-- a slice has to know its length up front
+firstSquares(4): [1 4 9 16]

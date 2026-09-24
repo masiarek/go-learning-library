@@ -1,0 +1,21 @@
+$ go mod init example
+$ go build -gcflags=-d=ssa/check_bce . 2>&1
+# example
+./main.go:7:10: Found IsInBounds
+./main.go:7:17: Found IsInBounds
+./main.go:7:24: Found IsInBounds
+./main.go:7:31: Found IsInBounds
+./main.go:14:7: Found IsInBounds
+./main.go:35:20: Found IsInBounds
+./main.go:57:10: Found IsInBounds
+./main.go:66:14: Found IsSliceInBounds
+exit status 0
+$ checks kept, per function:
+  checksumUnchecked  4
+  checksumHinted     1
+  sumRange           0
+  sumIndexed         1
+  histogramMasked    0
+  histogramModulo    1
+  header             1
+  main               0

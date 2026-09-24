@@ -1,0 +1,5 @@
+Registry[any, string]: Get(404) = "not found", true; len = 2
+Put([]byte key) panicked: runtime error: hash of unhashable type []uint8
+Describe over ~string with Kind:
+  label: "paid" (4 bytes)
+  label: "overdue" (7 bytes)

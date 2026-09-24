@@ -1,0 +1,12 @@
+err: handle request: load order: order 42 not found
+errors.As(err, &nf)  = true -> Kind: order ID: 42
+err.(*NotFoundError) = false (a type assertion sees only the outer layer)
+interface target     = true -> status 404
+
+value stored, value target:   errors.As(qerr, &q)  = true -> Limit: 10
+value stored, pointer target: errors.As(qerr, &qp) = false
+
+errors.As(err, nil)              panics: errors: target cannot be nil
+errors.As(err, NotFoundError{})  panics: errors: target must be a non-nil pointer
+errors.As(err, nilTarget)        panics: errors: target must be a non-nil pointer
+errors.As(err, &value)           panics: errors: *target must be interface or implement error

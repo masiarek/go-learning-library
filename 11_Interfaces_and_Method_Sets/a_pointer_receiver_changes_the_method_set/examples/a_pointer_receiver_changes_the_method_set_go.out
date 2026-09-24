@@ -1,0 +1,10 @@
+method set of Counter:  [Reset Value]
+method set of *Counter: [Increment Reset Value]
+after two c.Increment() calls, c.Value() = 2
+after inc.Increment() through *Counter, c.Value() = 3 ; the Valuer holds a copy taken earlier: 2
+after c.Reset() with a value receiver, c.Value() = 3 (a copy was reset, not c)
+counters[0].Increment() on a slice element: counters[0].Value() = 1
+byQueue["web"].Increment() through a *Counter in the map: 1
+does any(c) hold an Incrementer?   false
+does any(&c) hold an Incrementer?  true
+does any(c) hold a Valuer?         true

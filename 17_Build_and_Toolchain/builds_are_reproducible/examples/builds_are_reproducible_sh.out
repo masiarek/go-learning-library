@@ -1,0 +1,20 @@
+$ go build -trimpath -o one . && go build -trimpath -o two . && cmp one two
+identical: yes
+$ touch main.go && go build -trimpath -o three . && cmp one three
+identical: yes
+$ (cd "$second" && go build -trimpath -o four .) && cmp one "$second/four"
+identical: yes
+$ go build -o plain . && (cd "$second" && go build -o plain .) && cmp plain "$second/plain"
+identical: no
+$ grep -qF "$first" plain; grep -qF "$first" one
+plain names its build directory: yes
+one names its build directory: no
+$ GOFLAGS=-trimpath go build -o five . && cmp one five
+identical: yes
+$ go version -m one | grep trimpath
+	build	-trimpath=true
+$ go build -trimpath -ldflags "-X main.version=1.4.2" -o six . && cmp one six
+identical: no
+$ ./one; ./six
+invoice printer dev
+invoice printer 1.4.2

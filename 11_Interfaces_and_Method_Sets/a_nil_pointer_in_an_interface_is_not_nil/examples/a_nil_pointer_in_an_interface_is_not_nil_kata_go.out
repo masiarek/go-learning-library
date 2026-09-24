@@ -1,0 +1,4 @@
+lookupTyped(7): err != nil is true   typed nil holding *main.NotFoundError
+lookupTyped(8): err != nil is true   error: order 8 not found
+lookup(7):      err != nil is false  nil
+lookup(8):      err != nil is true   error: order 8 not found

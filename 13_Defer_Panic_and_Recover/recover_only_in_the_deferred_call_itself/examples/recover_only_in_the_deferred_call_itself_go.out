@@ -1,0 +1,14 @@
+1. recover outside any panic: <nil>
+2. defer recoverInTheDeferredFunction():
+   the deferred function recovered: invoice 18 has no customer
+   the caller saw: no panic
+3. defer recoverInAHelper():
+   a helper called by the deferred function got: <nil>
+   the caller saw: invoice 19 has no customer
+4. defer recover():
+   the caller saw: invoice 20 has no customer
+5. panic(nil):
+   *runtime.PanicNilError: panic called with nil argument
+6. a runtime error:
+   runtime error: index out of range [3] with length 3
+   is an error: true, errors.As runtime.Error: true

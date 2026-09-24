@@ -1,0 +1,6 @@
+$ go build infer.go
+# command-line-arguments
+./infer.go:21:22: in call to Zero, cannot infer T (declared at ./infer.go:5:11)
+./infer.go:23:24: in call to Map, cannot infer U (declared at ./infer.go:10:13)
+./infer.go:24:37: in call to Index, type []int of []int{…} does not match inferred type any for T
+exit status 1

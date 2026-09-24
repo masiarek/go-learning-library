@@ -1,0 +1,12 @@
+$ go mod init example
+$ go vet .
+# example
+# [example]
+./line_test.go:14:17: (*testing.common).Logf format %d has arg "two" of wrong type string
+exit status 1
+$ go test -bench=. -run='^$'
+# example
+# [example]
+./line_test.go:14:17: (*testing.common).Logf format %d has arg "two" of wrong type string
+FAIL	example [build failed]
+exit status 1

@@ -1,0 +1,17 @@
+$ gofmt -l .
+$ go build -o mailer .
+$ rm -r templates VERSION logo.bin main.go go.mod
+$ ls
+mailer
+$ ./mailer
+version: "1.4.2\n"
+logo: 6 bytes, 89 50 4e 47 0d 0a
+ReadDir: cancelled.txt
+ReadDir: shipped.txt
+WalkDir: . dir=true
+WalkDir: templates dir=true
+WalkDir: templates/emails dir=true
+WalkDir: templates/emails/cancelled.txt dir=false
+WalkDir: templates/emails/shipped.txt dir=false
+shipped.txt: "Dear %s,\nyour order %s has shipped.\n"
+exit status 0

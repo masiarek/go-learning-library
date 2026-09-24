@@ -1,0 +1,4 @@
+$ go build encode.go
+# command-line-arguments
+./encode.go:15:11: array length unsafe.Sizeof(v) (value of type uintptr) must be constant
+exit status 1

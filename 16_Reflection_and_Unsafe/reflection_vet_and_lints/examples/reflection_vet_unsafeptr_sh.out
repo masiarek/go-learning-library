@@ -1,0 +1,8 @@
+$ go mod init example
+$ go vet ./flagged
+# example/flagged
+# [example/flagged]
+flagged/main.go:14:24: possible misuse of unsafe.Pointer
+exit status 1
+$ go vet ./clean
+exit status 0

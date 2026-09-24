@@ -1,0 +1,19 @@
+$ go build -gcflags=-m total.go
+./total.go:5:6: can inline Readings
+./total.go:15:2: can inline main-range1
+./total.go:15:2: inlining call to Readings
+./total.go:18:13: inlining call to fmt.Println
+./total.go:15:2: inlining call to main-range1
+./total.go:5:15: yield does not escape
+./total.go:6:25: []int{...} does not escape
+./total.go:15:2: []int{...} does not escape
+./total.go:18:13: ... argument does not escape
+./total.go:18:14: total escapes to heap
+exit status 0
+$ go build -gcflags="-m -l" total.go
+./total.go:5:15: yield does not escape
+./total.go:6:25: []int{...} does not escape
+./total.go:15:2: func literal does not escape
+./total.go:18:13: ... argument does not escape
+./total.go:18:14: total escapes to heap
+exit status 0

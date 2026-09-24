@@ -1,0 +1,5 @@
+$ go build seq_vs_seq2.go
+# command-line-arguments
+./seq_vs_seq2.go:11:9: range over readings (variable of func type iter.Seq[int]) permits only one iteration variable
+./seq_vs_seq2.go:14:36: cannot use readings (variable of func type iter.Seq[int]) as iter.Seq2[int, int] value in variable declaration
+exit status 1

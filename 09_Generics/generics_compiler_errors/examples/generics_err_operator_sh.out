@@ -1,0 +1,7 @@
+$ go build operators.go
+# command-line-arguments
+./operators.go:4:5: invalid operation: a > b (type parameter T cannot use operator >)
+./operators.go:10:36: invalid operation: operator + not defined on a (variable of type T constrained by any)
+./operators.go:12:40: invalid operation: a == b (incomparable types in type set)
+./operators.go:16:48: invalid operation: operator - not defined on a (variable of type T constrained by ~int | ~string)
+exit status 1

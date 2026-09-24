@@ -1,0 +1,9 @@
+$ go mod init example
+$ go test -v
+=== RUN   TestBins
+--- PASS: TestBins
+=== RUN   TestPallets
+panic: Fail in goroutine after TestBins has completed
+exit status 2
+FAIL	example
+exit status 1

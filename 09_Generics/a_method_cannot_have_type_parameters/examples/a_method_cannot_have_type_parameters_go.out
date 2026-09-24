@@ -1,0 +1,2 @@
+MapStack:  *main.Stack[int] -> *main.Stack[string] ["order-7" "order-12"]
+Converter: main.Converter[int,float64] -> *main.Stack[float64] [3.5 6]

@@ -1,0 +1,15 @@
+$ go generate -n ./...
+echo file=invoices.go line=3
+echo file=orders.go package=orders line=3 literal=$
+echo from tagged.go, which go build never compiles
+$ go generate ./...
+file=invoices.go line=3
+file=orders.go package=orders line=3 literal=$
+from tagged.go, which go build never compiles
+$ go generate -run literal ./...
+file=orders.go package=orders line=3 literal=$
+$ go list -f '{{.GoFiles}} ignored={{.IgnoredGoFiles}}' .
+[invoices.go orders.go] ignored=[skipped.go tagged.go]
+$ go generate ./...
+failing.go:3: running "false": exit status 1
+exit status 1

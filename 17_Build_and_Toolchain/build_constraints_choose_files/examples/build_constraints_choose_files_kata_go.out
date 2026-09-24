@@ -1,0 +1,6 @@
+expression: (linux && amd64) || (darwin && !cgo)
+linux/amd64, cgo on          compiled: true
+linux/arm64, cgo on          compiled: false
+darwin/arm64, cgo on         compiled: false
+darwin/arm64, CGO_ENABLED=0  compiled: true
+the same constraint before Go 1.17: // +build linux,amd64 darwin,!cgo

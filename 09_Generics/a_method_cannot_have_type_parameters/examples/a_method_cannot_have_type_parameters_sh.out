@@ -1,0 +1,4 @@
+$ go build generic_method.go
+# command-line-arguments
+./generic_method.go:7:23: syntax error: method must have no type parameters
+exit status 1

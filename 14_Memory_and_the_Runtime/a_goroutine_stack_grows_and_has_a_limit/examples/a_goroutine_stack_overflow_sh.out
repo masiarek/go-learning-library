@@ -1,0 +1,6 @@
+$ go build overflow.go
+$ ./overflow
+limit set to 1 MiB, recursing without end
+runtime: goroutine stack exceeds 1048576-byte limit
+fatal error: stack overflow
+exit status 2

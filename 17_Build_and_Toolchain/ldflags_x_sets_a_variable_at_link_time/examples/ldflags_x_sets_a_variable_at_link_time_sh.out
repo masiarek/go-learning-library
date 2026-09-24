@@ -1,0 +1,20 @@
+$ gofmt -l .
+$ go build -o release . && ./release
+version="dev" commit="" channel="stable" fromConst="0.0.0" build=0
+$ go build -ldflags "-X main.version=1.4.2 -X main.commit=9f3a1c0 -X main.channel=beta -X main.fromConst=2.0" -o release . && ./release
+version="1.4.2" commit="9f3a1c0" channel="stable" fromConst="2.0" build=0
+recorded in the binary: -ldflags=-X main.version=1.4.2 -X main.commit=9f3a1c0 -X main.channel=beta -X main.fromConst=2.0
+$ go build -ldflags "-X main.build=7" -o release .
+# example
+main.build: cannot set with -X: not a var of type string (type:int)
+exit status 1
+$ go build -ldflags "-X main.nosuch=1" -o release . && ./release
+version="dev" commit="" channel="stable" fromConst="0.0.0" build=0
+recorded in the binary: -ldflags=-X main.nosuch=1
+exit status 0
+$ go build -ldflags "-s -w -X main.version=1.4.2" -o stripped . && ./stripped
+version="1.4.2" commit="" channel="stable" fromConst="0.0.0" build=0
+recorded in the binary: -ldflags=-s -w -X main.version=1.4.2
+stripped is smaller: yes
+$ go version -m stripped | grep ldflags
+	build	-ldflags="-s -w -X main.version=1.4.2"

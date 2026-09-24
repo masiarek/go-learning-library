@@ -1,0 +1,6 @@
+bytes of field data in either struct: 22
+Reading: Sizeof 32  padding 10
+  Offsetof: Valid 0  Value 8  Sensor 16  Flagged 20  At 24
+Compact: Sizeof 24  padding 2
+  Offsetof: Value 0  At 8  Sensor 16  Valid 20  Flagged 21
+[1000]Reading: 32000 bytes   [1000]Compact: 24000 bytes

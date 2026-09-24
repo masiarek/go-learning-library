@@ -15,4 +15,4 @@ The lessons build on each other. The race detector comes first, because the last
 - **Stress runs with `go test -count`** — running one test hundreds of times to shake out a rare interleaving, what `-count` and `-cpu` change, and what a clean stress run does and does not show.
 - **Goroutine leak checks** — a test that fails when it leaves a goroutine running: `synctest.Test`, which waits for every goroutine in its bubble, next to counting goroutines once they have settled.
 - **A deadlock inside a bubble** — what `synctest.Test` reports when every goroutine is blocked and no timer is left to wake one.
-- **`go vet` for concurrency mistakes** — a `sync.Mutex` or `sync.WaitGroup` copied by value, which vet's `copylocks` check reports.
+- **`go vet` for concurrency mistakes** — a `sync.WaitGroup` copied by value; the `Mutex` half is already on [Interfaces: what go vet and gofmt catch](../11_Interfaces_and_Method_Sets/interfaces_vet_and_lints/README.md) under `copylocks`, and Go 1.25's `waitgroup` analyzer on [Testing: what go vet catches](../18_Testing/testing_vet_and_lints/README.md).

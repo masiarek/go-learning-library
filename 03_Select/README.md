@@ -11,8 +11,9 @@ The four lessons are the rules that decide what `select` does. It waits until a 
 | [A timeout is a channel](a_timeout_is_a_channel/README.md) | `time.After`, a `Timer` and a `Ticker` are channels, so time is one more case |
 | [A nil channel disables a case](a_nil_channel_disables_a_case/README.md) | a case on a nil channel never proceeds, so setting the variable to `nil` switches it off |
 
+A `select` over channels known only at run time is `reflect.Select`, and it has its lesson in the reflection chapter: [`reflect.Select` over cases known at run time](../16_Reflection_and_Unsafe/reflect_select_over_cases_known_at_run_time/README.md).
+
 ## Planned
 
 - **`break` leaves the `select`, not the loop** — the `for`-`select` loop, why a bare `break` inside a case does not end it, and the labelled `break` or `return` that does.
 - **Reset a timer instead of making a new one** — an idle timeout that restarts on every message, with `Timer.Reset` and the guarantees it has had since Go 1.23.
-- **A `select` over channels known only at run time** — `reflect.Select`, for when the number of cases is not known until the program runs.

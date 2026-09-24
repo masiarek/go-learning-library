@@ -1,0 +1,9 @@
+$ go mod init example
+$ go vet .
+# example
+# [example]
+./main.go:14:23: call of Unmarshal passes non-pointer as second argument
+exit status 1
+$ go run .
+name "", err: json: Unmarshal(non-pointer main.Customer)
+exit status 0

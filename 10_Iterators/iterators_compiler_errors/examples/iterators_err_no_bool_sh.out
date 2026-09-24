@@ -1,0 +1,8 @@
+$ go build no_bool.go
+# command-line-arguments
+./no_bool.go:11:17: cannot range over Readings (value of type func(handle func(int))): func must be func(yield func(...) bool): yield func does not return bool
+exit status 1
+$ go build returns_error.go
+# command-line-arguments
+./returns_error.go:11:17: cannot range over Readings (value of type func(yield func(int) error)): func must be func(yield func(...) bool): yield func does not return bool
+exit status 1

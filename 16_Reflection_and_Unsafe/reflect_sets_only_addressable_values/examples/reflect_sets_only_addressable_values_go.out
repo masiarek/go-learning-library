@@ -1,0 +1,16 @@
+ValueOf(balance).CanSet():         false
+ValueOf(&balance).Elem().CanSet(): true
+after SetInt through the pointer:  balance = 250
+SetInt on the copy:       reflect: reflect.Value.SetInt using unaddressable value
+pin: CanAddr true, CanSet false, Int() 1234
+SetInt on unexported:     reflect: reflect.Value.SetInt using value obtained using unexported field
+Interface on unexported:  reflect.Value.Interface: cannot return value obtained from unexported field or method
+after setting by name: {Owner:Ada Lovelace Balance:175 pin:1234}
+FieldByName("Missing").IsValid(): false
+Set a string into an int: reflect.Set: value of type string is not assignable to type int
+MapIndex(...).CanSet():   false
+after SetMapIndex: map[Ada:750]
+reflect.New: *main.Account, Elem().CanSet() true
+  &{Owner:Grace Balance:0 pin:0}
+MakeSlice+Append: [Ada Grace], len 2, cap 2, type []string
+  back as []string: [Ada Grace] 2

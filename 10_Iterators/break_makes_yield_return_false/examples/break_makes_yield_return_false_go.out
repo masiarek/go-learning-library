@@ -1,0 +1,32 @@
+-- continue: yield returns true
+loop: got order-1
+producer: yield("order-1") returned true
+producer: yield("order-2") returned true
+loop: got order-3
+producer: yield("order-3") returned true
+producer: deferred cleanup ran
+-- break: yield returns false
+loop: got order-1
+producer: yield("order-1") returned true
+loop: got order-2
+producer: yield("order-2") returned false
+producer: deferred cleanup ran
+-- return from the enclosing function
+producer: yield("order-1") returned true
+producer: yield("order-2") returned false
+producer: deferred cleanup ran
+main: firstUrgent returned order-2
+-- panic in the loop body
+loop: got order-1
+producer: yield("order-1") returned true
+producer: deferred cleanup ran
+main: recovered: cannot pack order-2
+-- defer in the loop body belongs to main
+producer: yield("order-1") returned true
+producer: yield("order-2") returned true
+producer: yield("order-3") returned true
+producer: deferred cleanup ran
+main: the loop ended, main is still running
+main: deferred in the body for order-3
+main: deferred in the body for order-2
+main: deferred in the body for order-1

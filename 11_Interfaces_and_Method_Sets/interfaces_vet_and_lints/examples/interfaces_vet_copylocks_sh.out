@@ -1,0 +1,11 @@
+$ go mod init example
+$ go vet main.go
+# command-line-arguments
+# [command-line-arguments]
+./main.go:13:9: Add passes lock by value: command-line-arguments.Ledger contains sync.Mutex
+./main.go:19:15: report passes lock by value: command-line-arguments.Ledger contains sync.Mutex
+./main.go:24:9: call of report copies lock value: command-line-arguments.Ledger contains sync.Mutex
+./main.go:25:14: assignment copies lock value to snapshot: command-line-arguments.Ledger contains sync.Mutex
+exit status 1
+$ go vet pointers.go
+exit status 0

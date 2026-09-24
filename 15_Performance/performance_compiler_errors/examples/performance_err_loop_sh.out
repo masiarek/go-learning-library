@@ -1,0 +1,12 @@
+$ go mod init example
+$ go test -bench=. -run='^$'
+--- FAIL: BenchmarkBreak
+    benchmark.go:<line>: benchmark function returned without B.Loop() == false (break or return in loop?)
+--- FAIL: BenchmarkNested
+    benchmark.go:<line>: B.Loop called with timer stopped
+--- FAIL: BenchmarkMixed
+    benchmark.go:<line>: B.Loop called with timer stopped
+FAIL
+exit status 1
+FAIL	example
+exit status 1

@@ -1,0 +1,4 @@
+$ go build missing_return.go
+# command-line-arguments
+./missing_return.go:14:1: missing return
+exit status 1

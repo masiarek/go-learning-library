@@ -1,0 +1,9 @@
+$ cd bad && go vet .
+# example
+# [example]
+./main.go:5:40: fmt.Printf format %d has arg v of wrong type T
+./main.go:7:55: fmt.Printf format %d has arg v of wrong type T (contains ~float64)
+./main.go:9:46: fmt.Printf format %d has arg v of wrong type T (contains ~string)
+exit status 1
+$ cd good && go vet .
+exit status 0

@@ -1,0 +1,8 @@
+$ go vet close_before_check.go
+exit status 0
+$ go build close_before_check.go
+$ ./close_before_check
+counting orders on a database that is down
+panic: runtime error: invalid memory address or nil pointer dereference
+deferred call that panicked: database/sql.(*Rows).Close
+exit status 2

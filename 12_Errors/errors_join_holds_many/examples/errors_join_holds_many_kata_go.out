@@ -1,0 +1,7 @@
+order 2: customer is empty
+quantity 0: quantity must be positive
+order 3: quantity -1: quantity must be positive
+
+failed orders: 2 of 4
+some order had no customer: true
+all valid batch: <nil>

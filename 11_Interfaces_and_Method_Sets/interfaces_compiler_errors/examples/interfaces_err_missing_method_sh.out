@@ -1,0 +1,7 @@
+$ go build shapes.go
+# command-line-arguments
+./shapes.go:14:20: cannot use Square{…} (value of struct type Square) as Shape value in array or slice literal: Square does not implement Shape (wrong type for method Area)
+		have Area() int
+		want Area() float64
+./shapes.go:14:31: cannot use Circle{…} (value of struct type Circle) as Shape value in array or slice literal: Circle does not implement Shape (missing method Area)
+exit status 1

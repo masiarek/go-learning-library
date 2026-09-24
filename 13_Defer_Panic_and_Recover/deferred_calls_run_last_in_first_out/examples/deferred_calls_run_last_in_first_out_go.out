@@ -1,0 +1,14 @@
+postInvoice: lock the ledger
+postInvoice: open the invoice file
+postInvoice: begin the transaction
+postInvoice: returning
+postInvoice: end the transaction
+postInvoice: close the invoice file
+postInvoice: unlock the ledger
+
+panicking: close the invoice file
+panicking: unlock the ledger
+caller: recovered: invoice 18 has no customer
+
+worker: deferred call ran after Goexit
+main: the worker ended; main goes on

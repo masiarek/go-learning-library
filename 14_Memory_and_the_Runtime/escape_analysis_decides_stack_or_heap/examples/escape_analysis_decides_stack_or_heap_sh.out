@@ -1,0 +1,9 @@
+$ go build -gcflags=-m orders.go 2>&1 | grep -E "moved to heap|escapes to heap|does not escape"
+./orders.go:24:2: moved to heap: o
+./orders.go:32:13: ... argument does not escape
+./orders.go:32:14: o escapes to heap
+./orders.go:39:2: moved to heap: n
+./orders.go:40:9: func literal escapes to heap
+./orders.go:47:11: make([]int, 1000) does not escape
+./orders.go:59:11: make([]int, 100000) escapes to heap
+exit status 0

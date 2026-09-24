@@ -1,0 +1,10 @@
+$ go vet .
+# example
+# [example]
+./main.go:9:54: cmp.Or requires go1.22 or later (module is go1.21)
+./main.go:12:21: slices.Concat requires go1.22 or later (module is go1.21)
+exit status 1
+$ go build .
+exit status 0
+$ go mod edit -go=1.22 && go vet .
+exit status 0

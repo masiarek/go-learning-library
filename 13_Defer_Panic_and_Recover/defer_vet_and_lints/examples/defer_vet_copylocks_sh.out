@@ -1,0 +1,9 @@
+$ go vet by_value.go
+# command-line-arguments
+# [command-line-arguments]
+./by_value.go:13:9: Post passes lock by value: command-line-arguments.Ledger contains sync.Mutex
+exit status 1
+$ go vet by_pointer.go
+exit status 0
+$ go run by_pointer.go
+1999

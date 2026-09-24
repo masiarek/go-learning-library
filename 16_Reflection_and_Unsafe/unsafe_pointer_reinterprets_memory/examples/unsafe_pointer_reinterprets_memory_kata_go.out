@@ -1,0 +1,8 @@
+1        bits 0x3f800000  agrees with math: true
+-2.5     bits 0xc0200000  agrees with math: true
+0        bits 0x00000000  agrees with math: true
+3e+38    bits 0x7f61b1e6  agrees with math: true
+view(line) == copyOf(line): true
+allocations per call, copyOf: 1
+allocations per call, view:   0
+rule: a view is valid only while the bytes are neither modified nor reused

@@ -1,0 +1,6 @@
+$ go build under_any.go
+# command-line-arguments
+./under_any.go:4:5: invalid operation: a > b (type parameter T cannot use operator >)
+./under_any.go:13:11: invalid operation: operator + not defined on total (variable of type T constrained by any)
+./under_any.go:20:6: invalid operation: v == want (incomparable types in type set)
+exit status 1

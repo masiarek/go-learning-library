@@ -1,0 +1,5 @@
+main.Queue[main.Order] holds 2
+Pop: {ID:7 Qty:2}, ok = true
+Pop: {ID:12 Qty:5}, ok = true
+Pop: {ID:0 Qty:0}, ok = false
+main.Queue[string]: "pear", ok = true; then "", ok = false

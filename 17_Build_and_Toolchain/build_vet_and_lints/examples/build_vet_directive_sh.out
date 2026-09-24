@@ -1,0 +1,13 @@
+$ go vet .   # //go:debug after the package clause
+# example
+# [example]
+./main.go:3:1: //go:debug directive only valid before package declaration
+exit status 1
+$ go build -o report .
+exit status 0
+$ go vet ./orders   # //go:debug in a library package
+# example/orders
+orders/orders.go:1:1: //go:debug directive only valid in package main or test
+exit status 1
+$ go vet .   # the good version
+exit status 0

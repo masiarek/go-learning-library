@@ -1,0 +1,8 @@
+enter processOrder(18)
+  enter checkStock
+    order 18: 3 items in stock
+  leave checkStock
+  enter charge
+    order 18: charged
+  leave charge
+leave processOrder(18)

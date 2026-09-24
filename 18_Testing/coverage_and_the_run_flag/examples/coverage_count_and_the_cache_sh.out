@@ -1,0 +1,28 @@
+$ go mod init example
+$ go test .
+ok  	example
+exit status 0
+$ go test .     # the same package, the same tests: served from the cache
+ok  	example	(cached)
+exit status 0
+$ go test -count=1 .
+ok  	example
+exit status 0
+$ go test          # local directory mode: never cached
+PASS
+ok  	example
+exit status 0
+$ go test -v -run Fails
+=== RUN   TestFirstFails
+--- FAIL: TestFirstFails
+=== RUN   TestSecondFails
+--- FAIL: TestSecondFails
+FAIL
+FAIL	example
+exit status 1
+$ go test -v -failfast -run Fails
+=== RUN   TestFirstFails
+--- FAIL: TestFirstFails
+FAIL
+FAIL	example
+exit status 1

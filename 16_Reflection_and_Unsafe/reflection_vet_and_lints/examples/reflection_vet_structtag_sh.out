@@ -1,0 +1,17 @@
+$ go mod init example
+$ go build -o customer ./bad
+exit status 0
+$ go vet ./bad
+# example/bad
+# [example/bad]
+bad/main.go:9:2: struct field tag `json:name` not compatible with reflect.StructTag.Get: bad syntax for struct tag value
+bad/main.go:10:2: struct field tag `json: "email"` not compatible with reflect.StructTag.Get: bad syntax for struct tag value
+bad/main.go:11:2: struct field tag `json:"phone",xml:"phone"` not compatible with reflect.StructTag.Get: key:"value" pairs not separated by spaces
+bad/main.go:12:2: struct field Contact repeats json tag "phone" also at main.go:11
+bad/main.go:13:2: struct field balance has json tag but is not exported
+exit status 1
+$ go vet ./good
+exit status 0
+$ go run ./good
+{"name":"Ada","email":"","phone":"","contact":""} <nil>
+exit status 0

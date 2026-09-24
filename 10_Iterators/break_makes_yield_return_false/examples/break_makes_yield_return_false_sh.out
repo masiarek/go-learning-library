@@ -1,0 +1,13 @@
+$ go build misuse.go
+$ ./misuse careless
+loop: got 1
+panic: runtime error: range function continued iteration after function for loop body returned false
+exit status 2
+$ ./misuse swallows
+panic: runtime error: range function recovered a loop body panic and did not resume panicking
+exit status 2
+$ ./misuse stashes
+loop: got 1
+main: the loop is over
+panic: runtime error: range function continued iteration after whole loop exit
+exit status 2

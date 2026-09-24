@@ -1,0 +1,5 @@
+$ go build builtin_result.go
+# command-line-arguments
+./builtin_result.go:7:8: defer discards result of append(audit, "finished") (value of type []string)
+./builtin_result.go:8:8: defer discards result of len(audit) (value of type int)
+exit status 1

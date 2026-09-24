@@ -1,0 +1,8 @@
+$ go vet dropped.go
+# command-line-arguments
+# [command-line-arguments]
+./dropped.go:12:2: result of slices.Sorted call not used
+./dropped.go:13:2: result of slices.Collect call not used
+exit status 1
+$ go vet kept.go
+exit status 0

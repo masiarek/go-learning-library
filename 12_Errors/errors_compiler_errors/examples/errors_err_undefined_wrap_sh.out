@@ -1,0 +1,5 @@
+$ go build pkg_errors_habit.go
+# command-line-arguments
+./pkg_errors_habit.go:12:22: undefined: errors.Wrap
+./pkg_errors_habit.go:13:22: undefined: errors.Cause
+exit status 1

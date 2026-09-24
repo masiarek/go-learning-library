@@ -1,0 +1,10 @@
+s.Owner (promoted field) = Ann ; same variable as s.Account.Owner: true
+s.Name()         = savings of Ann
+s.Describe()     = account of Ann holding 100
+s.Account.Name() = account of Ann
+method set of Savings:  [Describe Name]
+method set of *Savings: [Deposit Describe Name]
+Savings is a Depositor: false ; *Savings is a Depositor: true
+LoudNotifier over consoleNotifier: Notify -> LOUD: ORDER 7 SHIPPED ; Close() = <nil>
+LoudNotifier over nothing:         Notify -> LOUD: ORDER 8 SHIPPED
+LoudNotifier over nothing:         Close() panicked: runtime error: invalid memory address or nil pointer dereference

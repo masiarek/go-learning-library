@@ -1,0 +1,5 @@
+$ go build receiver_int.go
+# command-line-arguments
+./receiver_int.go:10:3: invalid operation: total += v (mismatched types int and int /* with int declared at ./receiver_int.go:7:16 */)
+./receiver_int.go:12:9: cannot use total (variable of type int) as int /* with int declared at ./receiver_int.go:7:16 */ value in return statement
+exit status 1

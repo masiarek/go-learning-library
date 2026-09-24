@@ -1,0 +1,35 @@
+-- slices
+Values: 21
+Values: 19
+Values: 23
+All: 0 21
+All: 1 19
+All: 2 23
+Backward: 2 23
+Backward: 1 19
+Backward: 0 21
+Collect: [42 38 46]
+Chunk: [order-1 order-2]
+Chunk: [order-3 order-4]
+Chunk: [order-5]
+-- maps: a map iterator has no fixed order, so sort first
+Sorted(Keys): [bolt nut washer]
+Sorted(Values): [7 12 40]
+bolt: 40
+nut: 12
+washer: 7
+Collect(All) equal to the original: true
+-- strings and bytes
+SplitSeq: "bolt"
+SplitSeq: "nut"
+SplitSeq: ""
+SplitSeq: "washer"
+Lines: "first\n"
+Lines: "second\n"
+Lines: "third"
+bytes.Lines: "first\r\n"
+bytes.Lines: "second\n"
+-- reusable, and single-use
+slices.Values, twice: [21 19 23] [21 19 23]
+strings.Lines, twice: ["first\n" "second"] []
+LinesOf a reader, twice: ["first" "second"] []

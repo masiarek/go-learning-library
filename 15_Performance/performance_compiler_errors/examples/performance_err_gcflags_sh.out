@@ -1,0 +1,12 @@
+$ go mod init example
+$ go build -gcflags=-mm .
+# example
+flag provided but not defined: -mm
+usage: compile [options] file.go...
+exit status 1
+$ go build -gcflags=-d=ssa/check_bec .
+# example
+compile: Did not find a phase matching check_bec in -d=ssa/... debug option
+exit status 1
+$ go build -gcflags=-d=ssa/check_bce .
+exit status 0

@@ -1,0 +1,21 @@
+wrapped   : fulfil order 7: find order 7: order not found
+formatted : fulfil order 7: find order 7: order not found
+same text : true
+
+errors.Is(wrapped, ErrNotFound)   = true
+errors.Is(formatted, ErrNotFound) = false
+wrapped == ErrNotFound            = false
+
+Unwrap(wrapped)         : find order 7: order not found
+Unwrap(Unwrap(wrapped)) : order not found
+  ... == ErrNotFound    : true
+Unwrap(ErrNotFound)     : <nil>
+Unwrap(formatted)       : <nil>
+
+errors.Is(err, io.EOF)             = true - read order header: EOF
+os.Open: err == fs.ErrNotExist     = false
+os.Open: errors.Is(fs.ErrNotExist) = true
+
+503: errors.Is(err, ErrRetryable)   = true
+404: errors.Is(err, ErrRetryable)   = false
+503: errors.Is(err, HTTPError{503}) = true

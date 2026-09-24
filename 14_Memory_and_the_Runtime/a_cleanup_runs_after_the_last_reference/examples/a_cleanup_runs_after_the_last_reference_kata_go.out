@@ -1,0 +1,3 @@
+open: 3 4 5  cleanup of 4 stopped
+closed after collection: [3 5]
+the stopped cleanup reported anything: false

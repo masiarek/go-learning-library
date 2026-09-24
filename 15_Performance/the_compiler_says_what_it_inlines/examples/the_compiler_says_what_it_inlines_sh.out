@@ -1,0 +1,16 @@
+$ go mod init example
+$ go build -gcflags=-m . 2>&1 | grep inlin
+./main.go:4:6: can inline add
+./main.go:7:6: can inline sumTo
+./main.go:52:13: inlining call to add
+./main.go:52:26: inlining call to sumTo
+exit status 0
+$ go build -gcflags=-m . 2>&1 | grep -c 'cannot inline'
+0
+$ go build -gcflags=-m=2 . 2>&1 | grep 'cannot inline'
+./main.go:16:6: cannot inline safeDivide: unhandled op DEFER
+./main.go:17:8: cannot inline safeDivide.func1: call to recover
+./main.go:26:6: cannot inline big: function too complex: cost (a number) exceeds budget 80
+./main.go:49:6: cannot inline keepOut: marked go:noinline
+./main.go:51:6: cannot inline main: function too complex: cost (a number) exceeds budget 80
+exit status 0

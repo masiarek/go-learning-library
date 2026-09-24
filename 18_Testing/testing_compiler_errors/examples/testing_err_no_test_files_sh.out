@@ -1,0 +1,7 @@
+$ go mod init example
+$ go test
+?   	example	[no test files]
+exit status 0
+$ go test ./...
+?   	example	[no test files]
+exit status 0

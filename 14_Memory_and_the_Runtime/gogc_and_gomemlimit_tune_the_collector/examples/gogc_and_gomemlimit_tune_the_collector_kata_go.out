@@ -1,0 +1,5 @@
+percent before: 100
+inside: SetGCPercent(-1) reads back -1
+inside: 128 MiB of garbage ran a collection: false
+after: percent restored to 100: true
+after a panic inside: percent restored to 100: true

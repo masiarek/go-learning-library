@@ -1,0 +1,7 @@
+$ go tool cover -func=cover.out
+example/quantity.go:9:	ParseQuantity	85.7%
+total:			(statements)	85.7%
+$ cat >more_test.go   # the case that reaches the Atoi error branch
+$ go tool cover -func=cover.out
+example/quantity.go:9:	ParseQuantity	100.0%
+total:			(statements)	100.0%

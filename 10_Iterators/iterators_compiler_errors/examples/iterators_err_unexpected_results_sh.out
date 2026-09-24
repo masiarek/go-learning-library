@@ -1,0 +1,4 @@
+$ go build returns_bool.go
+# command-line-arguments
+./returns_bool.go:11:17: cannot range over Readings (value of type func(yield func(int) bool) bool): func must be func(yield func(...) bool): unexpected results
+exit status 1

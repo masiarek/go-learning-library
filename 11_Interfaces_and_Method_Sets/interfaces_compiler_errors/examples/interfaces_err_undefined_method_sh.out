@@ -1,0 +1,8 @@
+$ go build logger.go
+# command-line-arguments
+./logger.go:15:4: l.Flush undefined (type Logger has no field or method Flush)
+exit status 1
+$ go run logger_asserted.go
+order 7 shipped
+flushed 1 lines
+exit status 0

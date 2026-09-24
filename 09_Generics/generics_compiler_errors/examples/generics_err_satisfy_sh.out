@@ -1,0 +1,6 @@
+$ go build satisfy.go
+# command-line-arguments
+./satisfy.go:18:20: Celsius does not satisfy Exact (possibly missing ~ for float64 in Exact)
+./satisfy.go:19:19: []int does not satisfy comparable
+./satisfy.go:20:18: int does not satisfy Stringer (missing method String)
+exit status 1

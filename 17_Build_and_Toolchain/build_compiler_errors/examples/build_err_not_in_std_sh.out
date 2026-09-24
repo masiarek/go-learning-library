@@ -1,0 +1,6 @@
+$ go build -o report .
+main.go:5:2: package orders is not in std (GOROOT/src/orders)
+exit status 1
+$ go build -o report . && ./report
+orders: 3
+exit status 0

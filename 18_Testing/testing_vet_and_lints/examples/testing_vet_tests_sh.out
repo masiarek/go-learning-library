@@ -1,0 +1,22 @@
+$ go mod init example
+$ go vet
+# example
+# [example]
+./stock_test.go:9:6: TestonHand has malformed name: first letter after 'Test' must not be lowercase
+./stock_test.go:15:6: BenchmarkonHand has malformed name: first letter after 'Benchmark' must not be lowercase
+./stock_test.go:22:1: ExampleOnHand_Bad refers to unknown field or method: OnHand.Bad
+exit status 1
+$ go test
+# example
+# [example]
+./stock_test.go:9:6: TestonHand has malformed name: first letter after 'Test' must not be lowercase
+./stock_test.go:15:6: BenchmarkonHand has malformed name: first letter after 'Benchmark' must not be lowercase
+./stock_test.go:22:1: ExampleOnHand_Bad refers to unknown field or method: OnHand.Bad
+FAIL	example [build failed]
+exit status 1
+$ go test -vet=off -v
+=== RUN   ExampleOnHand_Bad
+--- PASS: ExampleOnHand_Bad
+PASS
+ok  	example
+exit status 0

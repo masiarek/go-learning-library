@@ -1,0 +1,5 @@
+balances after deposits: [{120} {80} {50}]
+total: 250
+methods of Wallet:  [Balance]
+methods of *Wallet: [Balance Deposit]
+Wallet satisfies Depositor: false ; *Wallet satisfies Depositor: true

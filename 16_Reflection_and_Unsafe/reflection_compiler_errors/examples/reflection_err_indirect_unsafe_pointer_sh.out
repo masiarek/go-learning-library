@@ -1,0 +1,5 @@
+$ go build deref.go
+# command-line-arguments
+./deref.go:11:15: invalid operation: cannot indirect p (variable of type unsafe.Pointer)
+./deref.go:12:22: cannot convert total (variable of type int) to type unsafe.Pointer
+exit status 1

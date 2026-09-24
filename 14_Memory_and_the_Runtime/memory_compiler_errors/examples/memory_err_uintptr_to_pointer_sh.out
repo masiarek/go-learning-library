@@ -1,0 +1,4 @@
+$ go build integer_pointer.go
+# command-line-arguments
+./integer_pointer.go:13:19: cannot convert addr (variable of type uintptr) to type *Order
+exit status 1

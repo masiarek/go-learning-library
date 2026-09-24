@@ -1,0 +1,7 @@
+$ go build uninstantiated.go
+# command-line-arguments
+./uninstantiated.go:10:21: invalid map key type T (missing comparable constraint)
+./uninstantiated.go:13:15: cannot use generic type Stack[T any] without instantiation
+./uninstantiated.go:14:12: not enough type arguments for type Pair: have 1, want 2
+./uninstantiated.go:15:11: too many type arguments for type Stack: have 2, want 1
+exit status 1

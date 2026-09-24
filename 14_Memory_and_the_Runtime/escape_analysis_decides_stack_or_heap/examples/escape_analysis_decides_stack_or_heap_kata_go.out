@@ -1,0 +1,3 @@
+pointer version, allocations per call: 1
+value version, allocations per call:   0
+both versions summed the same cents: true

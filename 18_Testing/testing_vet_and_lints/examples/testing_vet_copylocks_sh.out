@@ -1,0 +1,15 @@
+$ go mod init example
+$ go vet
+# example
+# [example]
+./stock_test.go:6:14: check passes lock by value: testing.T contains testing.common contains sync.RWMutex
+./stock_test.go:13:8: call of check copies lock value: testing.T contains testing.common contains sync.RWMutex
+exit status 1
+$ go test -v
+=== RUN   TestOnHand
+    stock_test.go:8: OnHand("WH-1") = 4, want 5
+--- PASS: TestOnHand
+FAIL
+exit status 1
+FAIL	example
+exit status 1

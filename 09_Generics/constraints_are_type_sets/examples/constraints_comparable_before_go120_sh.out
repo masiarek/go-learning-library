@@ -1,0 +1,11 @@
+$ cat go.mod
+module example
+
+go 1.19
+$ go build .
+# example
+./main.go:15:19: any to satisfy comparable requires go1.20 or later (-lang was set to go1.19; check go.mod)
+exit status 1
+$ go mod edit -go=1.20 && go build . && ./example
+2
+exit status 0

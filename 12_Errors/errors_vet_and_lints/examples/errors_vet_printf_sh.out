@@ -1,0 +1,18 @@
+$ go mod init example
+$ go vet .
+# example
+# [example]
+./wrap_verbs.go:11:23: fmt.Printf does not support error-wrapping directive %w
+./wrap_verbs.go:12:36: fmt.Sprintf does not support error-wrapping directive %w
+./wrap_verbs.go:13:33: fmt.Errorf format %w has arg 503 of wrong type int
+./wrap_verbs.go:15:38: fmt.Errorf format %w reads arg #1, but call has 0 args
+./wrap_verbs.go:16:14: fmt.Errorf call needs 1 arg but has 2 args
+exit status 1
+$ go run .
+printf : %!w(*errors.errorString=&{order not found})
+sprintf: %!w(*errors.errorString=&{order not found})
+status %!w(int=503)
+count &{%!d(string=order not found)}
+load order: %!w(MISSING)
+load order: order not found%!(EXTRA int=7)
+exit status 0

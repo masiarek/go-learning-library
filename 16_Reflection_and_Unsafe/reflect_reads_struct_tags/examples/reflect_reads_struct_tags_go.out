@@ -1,0 +1,16 @@
+main.Invoice has 5 fields:
+  Number   exported true  json="number"              validate="required" (tag present true)
+  Customer exported true  json="customer,omitempty"  validate="required" (tag present true)
+  Amount   exported true  json="amount"              validate="" (tag present false)
+  Note     exported true  json="-"                   validate="" (tag present false)
+  draft    exported false json=""                    validate="" (tag present false)
+required fields missing in paid:  none
+required fields missing in blank: Number, Customer
+json.Marshal: {"number":"INV-1001","customer":"Ada Lovelace","amount":1250.5} (err <nil>)
+json.Marshal: {"number":"","amount":99} (err <nil>)
+json.Marshal of a struct with only unexported fields: {} (err <nil>)
+Celsius: Type main.Celsius, Name "Celsius", Kind float64
+  Type == TypeOf(float64): false
+  Kind == reflect.Float64: true
+  Kind of *Celsius: ptr  Elem: main.Celsius
+round trip: 21.5 main.Celsius, Celsius true, CanSet false

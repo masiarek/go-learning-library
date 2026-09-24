@@ -1,0 +1,2 @@
+$ go vet all_at_the_end.go
+exit status 0

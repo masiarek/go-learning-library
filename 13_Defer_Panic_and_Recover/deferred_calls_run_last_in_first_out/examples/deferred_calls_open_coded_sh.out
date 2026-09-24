@@ -1,0 +1,15 @@
+$ go build -gcflags=-d=defer kinds.go
+# command-line-arguments
+./kinds.go:14:2: open-coded defer
+./kinds.go:15:2: open-coded defer
+./kinds.go:21:2: stack-allocated defer
+./kinds.go:22:2: stack-allocated defer
+./kinds.go:23:2: stack-allocated defer
+./kinds.go:24:2: stack-allocated defer
+./kinds.go:25:2: stack-allocated defer
+./kinds.go:26:2: stack-allocated defer
+./kinds.go:27:2: stack-allocated defer
+./kinds.go:28:2: stack-allocated defer
+./kinds.go:29:2: stack-allocated defer
+./kinds.go:39:3: heap-allocated defer
+exit status 0

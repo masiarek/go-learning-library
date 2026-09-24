@@ -1,0 +1,22 @@
+allocations per call
+box an int into any                                1
+box a 4-field struct into any                      1
+type switch on the boxed int                       0
+reflect.ValueOf(boxed int).Kind()                  0
+reflect.ValueOf(int).Kind(), boxing inside         0
+reflect.TypeOf(boxed struct).Kind()                0
+ValueOf(boxed int).Interface() round trip          0
+ValueOf(boxed struct).Field(0).Interface()         0
+ValueOf(&invoice).Elem().Field(0).Interface()      1
+ValueOf(&invoice).Elem().Field(0).String()         0
+TypeAssert[string](same Field(0)), Go 1.25         0
+TypeAssert[Invoice](ValueOf(&invoice).Elem())      0
+ValueOf(&invoice).Elem().Interface().(Invoice)     1
+TypeOf(invoice).Field(0).Tag.Get("json")           0
+json.Marshal(invoice)                              2
+json.Marshal(&invoice)                             1
+appendInvoice into a reused 128-byte buffer        0
+appendInvoice into nil, growing as it goes         4
+fmt.Sprintf("%T", invoice)                         2
+reflect.TypeOf(invoice).String()                   0
+hand-written and json.Marshal agree byte for byte: true

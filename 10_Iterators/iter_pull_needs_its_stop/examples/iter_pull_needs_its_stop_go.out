@@ -1,0 +1,29 @@
+-- pull two, then stop
+main: iter.Pull returned; nothing has run yet
+producer: yielding order-1
+main: next -> "order-1", true
+producer: yielding order-2
+main: next -> "order-2", true
+main: calling stop
+producer: yield returned false
+producer: deferred cleanup ran
+main: stop returned
+main: next after stop -> "", false
+main: a second stop is allowed and does nothing
+-- pull to the end
+producer: yielding order-1
+main: next -> "order-1", true
+producer: yielding order-2
+main: next -> "order-2", true
+producer: yielding order-3
+main: next -> "order-3", true
+producer: finished on its own
+producer: deferred cleanup ran
+main: next -> "", false
+main: stop after the end is allowed and does nothing
+-- stop before any next
+main: stop returned; the producer never started
+main: next -> "", false
+-- a panic in the producer comes out of next
+main: next -> 1, true
+main: recovered: sensor unplugged

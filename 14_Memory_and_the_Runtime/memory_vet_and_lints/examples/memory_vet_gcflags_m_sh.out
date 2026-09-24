@@ -1,0 +1,19 @@
+$ go build -gcflags=-m registry.go 2>&1 | grep -v "^#"
+./registry.go:11:6: can inline register
+./registry.go:16:6: can inline idOf
+./registry.go:21:6: can inline notesOf
+./registry.go:26:6: can inline double
+./registry.go:30:6: can inline main
+./registry.go:32:10: inlining call to register
+./registry.go:33:9: inlining call to idOf
+./registry.go:33:24: inlining call to notesOf
+./registry.go:33:35: inlining call to double
+./registry.go:11:15: leaking param: o
+./registry.go:12:19: append escapes to heap
+./registry.go:16:11: o does not escape
+./registry.go:21:14: leaking param: o to result ~r0 level=1
+./registry.go:31:7: &Order{...} escapes to heap
+./registry.go:31:36: []string{...} escapes to heap
+./registry.go:32:10: append escapes to heap
+./registry.go:34:9: "nothing registered" escapes to heap
+exit status 0

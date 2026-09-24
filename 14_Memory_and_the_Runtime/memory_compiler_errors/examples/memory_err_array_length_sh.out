@@ -1,0 +1,5 @@
+$ go build lengths.go
+# command-line-arguments
+./lengths.go:7:16: invalid array length slots
+./lengths.go:8:16: invalid array length -1 (untyped int constant)
+exit status 1

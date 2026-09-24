@@ -1,0 +1,10 @@
+$ go mod init example
+$ go vet
+# example
+# [example]
+./stock_test.go:15:5: call to (*testing.T).Fatalf from a non-test goroutine
+exit status 1
+$ go test
+PASS
+ok  	example
+exit status 0

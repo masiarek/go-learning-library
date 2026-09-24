@@ -1,0 +1,14 @@
+$ go mod init example
+$ go build -o sumreadings .
+$ ./sumreadings
+total is not zero: true
+exit status 0
+$ go tool pprof -top -nodecount=5 ./sumreadings cpu.prof >top.txt
+exit status 0
+$ grep -E '^(File|Type):' top.txt
+File: sumreadings
+Type: cpu
+$ awk 'header { print "top row: " $NF; exit } /^ *flat +flat%/ { header = 1 }' top.txt
+top row: main.hot
+$ grep -c ' main\.hot$' top.txt
+main.hot in the top 5: yes

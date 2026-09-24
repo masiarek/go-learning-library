@@ -1,0 +1,16 @@
+$ go mod init example
+$ go test -bench=. -run='^$'
+?   	example	[no test files]
+exit status 0
+$ go test -bench=. -run='^$'    # line_test.go added: a test, no benchmark
+PASS
+ok  	example
+exit status 0
+$ go test -bench='Join(' -run='^$'
+testing: invalid regexp for element 0 of -test.bench ("Join("): error parsing regexp: missing closing ): `Join(`
+exit status 1
+FAIL	example
+exit status 1
+$ go test -bench=. -benchtime=fast -run='^$'
+invalid value "fast" for flag -test.benchtime: invalid duration
+exit status 1

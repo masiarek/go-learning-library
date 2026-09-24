@@ -11,10 +11,11 @@ A mutex is often the simpler choice. A counter, a cache, or a struct that gorout
 | [`sync.Once` runs exactly once](once_runs_exactly_once/README.md) | ten simultaneous callers, one run; a panic is forgotten by `Once` and repeated by `OnceFunc` |
 | [A WaitGroup counts goroutines](a_waitgroup_counts_goroutines/README.md) | `Add` goes before the `go` statement, because an `Add` inside the goroutine can come after `Wait` has returned |
 
+A struct holding a `Mutex` passed by value is what `go vet`'s `copylocks` reports; the transcript is on [Interfaces: what go vet and gofmt catch](../11_Interfaces_and_Method_Sets/interfaces_vet_and_lints/README.md).
+
 ## Planned
 
 - **`sync.RWMutex`**: many readers or one writer, and how to tell whether that beats a plain `Mutex` for a given workload.
 - **`sync.Cond`**: waiting for a condition, and the channel that usually replaces it.
 - **`sync.Map`**: the two access patterns it is built for, and a map with a `Mutex` for everything else.
 - **`sync.Pool`**: reusing allocations the garbage collector is free to discard.
-- **Copying a lock**: `go vet`'s `copylocks` check on a struct holding a `Mutex` passed by value.

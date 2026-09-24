@@ -1,0 +1,34 @@
+$ cat go.mod
+module example
+
+go 1.21
+$ go vet .   # slices.Concat is new in Go 1.22
+# example
+# [example]
+./main.go:9:18: slices.Concat requires go1.22 or later (module is go1.21)
+exit status 1
+$ go build -o report . && ./report
+[invoice 1042 3 lines]
+exit status 0
+$ cat go.mod
+module example
+
+go 1.20
+$ go vet .   # package slices is new in Go 1.21, but the go line is before 1.21
+exit status 0
+$ go build -o report . && ./report
+[10 20 30]
+exit status 0
+$ go build -o report .   # range over an int is Go 1.22 language, and the go line is 1.20
+# example
+./main.go:6:17: cannot range over 3 (untyped int constant): requires go1.22 or later (-lang was set to go1.20; check go.mod)
+exit status 1
+$ cat go.mod
+module example
+
+go 1.22
+$ go vet . && go build -o report . && ./report
+line 0
+line 1
+line 2
+exit status 0

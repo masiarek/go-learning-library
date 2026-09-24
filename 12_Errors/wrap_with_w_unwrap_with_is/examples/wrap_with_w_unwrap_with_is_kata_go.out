@@ -1,0 +1,8 @@
+line 1: pick 4
+line 2: not a number
+line 3: bad quantity
+line 4: other: line 4: want sku and quantity, got "shelf"
+the chain behind line 2, one Unwrap at a time:
+  *fmt.wrapError: line 2: strconv.Atoi: parsing "x": invalid syntax
+  *strconv.NumError: strconv.Atoi: parsing "x": invalid syntax
+  *errors.errorString: invalid syntax

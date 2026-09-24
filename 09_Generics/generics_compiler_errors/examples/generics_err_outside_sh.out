@@ -1,0 +1,7 @@
+$ go build outside.go
+# command-line-arguments
+./outside.go:6:2: cannot use type Number outside a type constraint: interface contains type constraints
+./outside.go:9:17: cannot use type Number outside a type constraint: interface contains type constraints
+./outside.go:12:12: cannot use type Number outside a type constraint: interface contains type constraints
+./outside.go:13:16: cannot use type Number outside a type constraint: interface contains type constraints
+exit status 1

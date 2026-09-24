@@ -1,0 +1,6 @@
+$ go mod init example
+$ go build -gcflags=-m . 2>&1 | grep -E "escapes|leaking|moved"
+./main.go:6:39: quantity escapes to heap
+./main.go:9:18: leaking param: order
+./main.go:13:14: &[2]int{...} escapes to heap
+exit status 0

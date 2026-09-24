@@ -1,0 +1,9 @@
+Pop: "inv-2", ok = true
+Pop: "inv-1", ok = true
+Pop: "", ok = false
+Peek on empty Stack[float64]: 0, ok = false
+Pop on empty Stack[*string]: <nil>, ok = false
+Set: Has("paid") = true, Has("void") = false, len = 1
+%T: main.Stack[string], *main.Stack[float64], main.Set[string], main.Pair[string,float64]
+%T: main.Stack[[]uint8], main.Stack[main.Stack[int]]
+%v of a zero Stack[int]: {[]}, %+v: {items:[]}

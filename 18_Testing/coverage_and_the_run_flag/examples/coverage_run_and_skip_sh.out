@@ -1,0 +1,55 @@
+$ go mod init example
+$ go test -v -run TestParse
+=== RUN   TestParseQuantity
+=== RUN   TestParseQuantity/crates
+=== RUN   TestParseQuantity/empty
+=== RUN   TestParseQuantity/negative
+=== RUN   TestParseUnit
+=== RUN   TestParseUnit/plural
+=== RUN   TestParseUnit/empty
+PASS
+ok  	example
+exit status 0
+$ go test -v -run '/empty'
+=== RUN   TestParseQuantity
+=== RUN   TestParseQuantity/empty
+=== RUN   TestParseUnit
+=== RUN   TestParseUnit/empty
+=== RUN   TestTotal
+PASS
+ok  	example
+exit status 0
+$ go test -v -run 'TestParseQuantity/^(crates|negative)$'
+=== RUN   TestParseQuantity
+=== RUN   TestParseQuantity/crates
+=== RUN   TestParseQuantity/negative
+PASS
+ok  	example
+exit status 0
+$ go test -v -skip '/empty'
+=== RUN   TestParseQuantity
+=== RUN   TestParseQuantity/crates
+=== RUN   TestParseQuantity/negative
+=== RUN   TestParseUnit
+=== RUN   TestParseUnit/plural
+=== RUN   TestTotal
+PASS
+ok  	example
+exit status 0
+$ go test -v -skip 'empty'     # no slash: matched against the top level only
+=== RUN   TestParseQuantity
+=== RUN   TestParseQuantity/crates
+=== RUN   TestParseQuantity/empty
+=== RUN   TestParseQuantity/negative
+=== RUN   TestParseUnit
+=== RUN   TestParseUnit/plural
+=== RUN   TestParseUnit/empty
+=== RUN   TestTotal
+PASS
+ok  	example
+exit status 0
+$ go test -run TestInvoice
+testing: warning: no tests to run
+PASS
+ok  	example
+exit status 0

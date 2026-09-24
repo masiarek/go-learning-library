@@ -1,0 +1,4 @@
+$ go build not_a_yield.go
+# command-line-arguments
+./not_a_yield.go:11:17: cannot range over Readings (value of type func(count int)): func must be func(yield func(...) bool): argument is not func
+exit status 1

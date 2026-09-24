@@ -1,0 +1,27 @@
+$ go mod init example
+$ go test -v -run TestParseQuantity
+=== RUN   TestParseQuantity
+=== RUN   TestParseQuantity/crates
+=== RUN   TestParseQuantity/pallets
+    quantity_test.go:24: ParseQuantity("7 pallets") = 7, "pallets"; want 7, "pallet"
+=== RUN   TestParseQuantity/empty
+--- FAIL: TestParseQuantity
+    --- PASS: TestParseQuantity/crates
+    --- FAIL: TestParseQuantity/pallets
+    --- PASS: TestParseQuantity/empty
+FAIL
+exit status 1
+FAIL	example
+exit status 1
+$ go test -v -run 'TestErrorCarriesOn|TestFatalStops'
+=== RUN   TestErrorCarriesOn
+    quantity_test.go:35: n = 12, want 13
+    quantity_test.go:38: unit = "crates", want "crate"
+--- FAIL: TestErrorCarriesOn
+=== RUN   TestFatalStops
+    quantity_test.go:45: n = 12, want 13
+--- FAIL: TestFatalStops
+FAIL
+exit status 1
+FAIL	example
+exit status 1

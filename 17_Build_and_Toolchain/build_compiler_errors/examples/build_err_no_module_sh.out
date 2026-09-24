@@ -1,0 +1,18 @@
+$ go run main.go
+orders: 3
+exit status 0
+$ go build -o orders main.go
+exit status 0
+$ go build -o orders .
+go: go.mod file not found in current directory or any parent directory; see 'go help modules'
+exit status 1
+$ go build ./...
+pattern ./...: directory prefix . does not contain main module or its selected dependencies
+exit status 1
+$ go mod init example
+go: creating new go.mod: module example
+go: to add module requirements and sums:
+	go mod tidy
+$ go build -o orders . && ./orders
+orders: 3
+exit status 0

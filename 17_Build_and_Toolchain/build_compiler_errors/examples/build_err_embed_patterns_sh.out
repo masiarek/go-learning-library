@@ -1,0 +1,16 @@
+$ go build -o report .   # //go:embed missing.txt
+main.go:8:12: pattern missing.txt: no matching files found
+exit status 1
+$ go build -o report .   # //go:embed ../VERSION
+main.go:8:12: pattern ../VERSION: invalid pattern syntax
+exit status 1
+$ go build -o report .   # //go:embed /etc/hosts
+main.go:8:12: pattern /etc/hosts: invalid pattern syntax
+exit status 1
+$ go build -o report .   # //go:embed "VERSION
+# example
+./main.go:8:3: invalid quoted string in //go:embed: "VERSION
+./main.go:8:3: usage: //go:embed pattern...
+exit status 1
+$ go build -o report .   # //go:embed VERSION
+exit status 0

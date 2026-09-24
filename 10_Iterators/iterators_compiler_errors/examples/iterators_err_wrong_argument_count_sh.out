@@ -1,0 +1,8 @@
+$ go build extra_parameter.go
+# command-line-arguments
+./extra_parameter.go:11:17: cannot range over Readings (value of type func(yield func(int) bool, limit int)): func must be func(yield func(...) bool): wrong argument count
+exit status 1
+$ go build not_called.go
+# command-line-arguments
+./not_called.go:16:17: cannot range over Readings (value of type func() iter.Seq[int]): func must be func(yield func(...) bool): wrong argument count
+exit status 1

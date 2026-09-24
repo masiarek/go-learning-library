@@ -1,0 +1,5 @@
+$ go build contact.go
+# command-line-arguments
+./contact.go:20:16: ambiguous selector c.Name
+./contact.go:20:24: ambiguous selector c.Describe
+exit status 1

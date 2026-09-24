@@ -1,0 +1,14 @@
+$ go test -v -parallel 3 -run TestRegions
+=== RUN   TestRegions
+=== RUN   TestRegions/north
+=== PAUSE TestRegions/north
+=== RUN   TestRegions/south
+=== PAUSE TestRegions/south
+=== RUN   TestRegions/east
+=== PAUSE TestRegions/east
+regions_test.go:26: kata: subtests finished: [east north south]
+regions_test.go:33: kata: temp dirs removed: 3 of 3
+--- PASS: TestRegions
+PASS
+ok  	example
+exit status 0

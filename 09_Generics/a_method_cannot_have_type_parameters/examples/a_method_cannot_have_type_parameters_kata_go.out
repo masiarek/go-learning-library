@@ -1,0 +1,3 @@
+ReduceStack: total quantity 21 (int)
+Folder.Fold: "pear, apple" (main.Folder[string,string])
+Folder.Fold: count 2

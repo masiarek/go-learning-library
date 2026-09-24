@@ -1,0 +1,7 @@
+$ cd bad && go mod init example && go vet .
+# example
+# [example]
+./second_field.go:16:18: possible misuse of unsafe.Pointer
+exit status 1
+$ cd good && go mod init example && go vet .
+exit status 0

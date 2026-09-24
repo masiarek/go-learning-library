@@ -1,0 +1,37 @@
+$ go mod init example
+$ go test -v -run=FuzzParse
+=== RUN   FuzzParse
+=== RUN   FuzzParse/seed#0
+=== RUN   FuzzParse/seed#1
+=== RUN   FuzzParse/seed#2
+--- PASS: FuzzParse
+    --- PASS: FuzzParse/seed#0
+    --- PASS: FuzzParse/seed#1
+    --- PASS: FuzzParse/seed#2
+PASS
+ok  	example
+exit status 0
+$ mkdir -p testdata/fuzz/FuzzParse
+$ printf 'go test fuzz v1\nstring("XX-9")\n' >testdata/fuzz/FuzzParse/legacy_prefix
+$ go test -v -run=FuzzParse
+=== RUN   FuzzParse
+=== RUN   FuzzParse/seed#0
+=== RUN   FuzzParse/seed#1
+=== RUN   FuzzParse/seed#2
+=== RUN   FuzzParse/legacy_prefix
+--- FAIL: FuzzParse
+    --- PASS: FuzzParse/seed#0
+    --- PASS: FuzzParse/seed#1
+    --- PASS: FuzzParse/seed#2
+    --- FAIL: FuzzParse/legacy_prefix
+panic: unhandled legacy prefix XX [recovered, repanicked]
+exit status 2
+FAIL	example
+exit status 1
+$ go test -run=FuzzParse/legacy_prefix
+--- FAIL: FuzzParse
+    --- FAIL: FuzzParse/legacy_prefix
+panic: unhandled legacy prefix XX [recovered, repanicked]
+exit status 2
+FAIL	example
+exit status 1

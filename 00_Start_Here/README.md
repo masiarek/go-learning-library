@@ -14,6 +14,16 @@ This library is for someone who can read Go — functions, structs, slices, erro
 6. [**A worker pool**](../06_Patterns/a_worker_pool/README.md) — the pattern most programs end up needing.
 7. [**The race detector**](../07_Testing_Concurrent_Code/the_race_detector/README.md) — the tool to run before trusting any of the above in your own code.
 
+## After the seven: the advanced chapters
+
+Chapters 09 to 18 leave concurrency for the rest of the language, at the level where the surprises are. Each lesson still makes one claim and backs it with a program, and each chapter adds three companion pages — its compiler errors, what `go vet` and `gofmt` catch, and its resources — plus a kata with a verified solution at the end of every lesson. A good order for a reader who already writes Go:
+
+1. [**Errors**](../12_Errors/README.md) and [**Defer, panic and recover**](../13_Defer_Panic_and_Recover/README.md) — the two chapters every program uses on every page.
+2. [**Interfaces and method sets**](../11_Interfaces_and_Method_Sets/README.md) — the typed nil and the method-set rule explain most "but it compiled" bugs.
+3. [**Generics**](../09_Generics/README.md) and [**Iterators**](../10_Iterators/README.md) — the language since 1.18 and 1.23.
+4. [**Testing**](../18_Testing/README.md), [**Performance**](../15_Performance/README.md) and [**Memory and the runtime**](../14_Memory_and_the_Runtime/README.md) — measuring instead of guessing.
+5. [**Build and toolchain**](../17_Build_and_Toolchain/README.md) and [**Reflection and unsafe**](../16_Reflection_and_Unsafe/README.md) — the `go` command beyond `go run`, and the two packages to reach for last.
+
 ## How to read a page
 
 Each page has the same shape: a **one-line** claim, an output block from the program in that page's `examples/` folder, **Reading the output**, **What to do**, **In other languages**, and **Sources**. The output blocks are generated, never typed: if a page shows a value, Go printed it, on both CI machines.

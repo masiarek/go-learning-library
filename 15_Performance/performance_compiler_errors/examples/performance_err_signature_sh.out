@@ -1,0 +1,9 @@
+$ go mod init example
+$ go test -bench=. -run='^$'
+# example
+./line_test.go:5:1: wrong signature for BenchmarkJoin, must be: func BenchmarkJoin(b *testing.B)
+FAIL	example [setup failed]
+exit status 1
+$ go vet .
+./line_test.go:5:1: wrong signature for BenchmarkJoin, must be: func BenchmarkJoin(b *testing.B)
+exit status 1

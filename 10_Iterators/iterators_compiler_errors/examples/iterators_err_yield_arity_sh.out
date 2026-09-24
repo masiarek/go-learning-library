@@ -1,0 +1,13 @@
+$ go build yield_arity.go
+# command-line-arguments
+./yield_arity.go:7:16: too many arguments in call to yield
+	have (number, string)
+	want (int)
+./yield_arity.go:8:6: not enough arguments in call to yield
+	have ()
+	want (int)
+exit status 1
+$ go build three_values.go
+# command-line-arguments
+./three_values.go:11:17: cannot range over Readings (value of type func(yield func(int, string, bool) bool)): func must be func(yield func(...) bool): yield func has too many parameters
+exit status 1

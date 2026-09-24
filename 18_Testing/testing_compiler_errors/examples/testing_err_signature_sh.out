@@ -1,0 +1,9 @@
+$ go mod init example
+$ go test
+# example
+./stock_test.go:5:1: wrong signature for TestOnHand, must be: func TestOnHand(t *testing.T)
+FAIL	example [setup failed]
+exit status 1
+$ go vet
+./stock_test.go:5:1: wrong signature for TestOnHand, must be: func TestOnHand(t *testing.T)
+exit status 1

@@ -1,0 +1,4 @@
+$ go build unused_recover.go
+# command-line-arguments
+./unused_recover.go:7:3: declared and not used: r
+exit status 1

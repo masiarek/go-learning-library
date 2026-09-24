@@ -1,0 +1,6 @@
+Join over ~int | ~string: 7;12; pear;apple;
+Total over a union with a method: 375 g | 1.75 L
+Index([]any{1, "a", 2}, 2) = 2
+Index([]any{[]int{1}, 2}, 2) = 1
+Index([]any{[]int{1}}, any([]int{1})) = panic: runtime error: comparing uncomparable type []int
+Set[any] with a []int key: panic: runtime error: hash of unhashable type []int

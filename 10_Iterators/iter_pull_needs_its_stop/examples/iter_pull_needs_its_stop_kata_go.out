@@ -1,0 +1,6 @@
+hall = 21
+garage = 19
+sensors: cleanup ran
+zip: calling stop
+readings: cleanup ran
+main: the loop ended

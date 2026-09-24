@@ -1,0 +1,6 @@
+$ go build receivers.go
+# command-line-arguments
+./receivers.go:9:9: invalid receiver type StackRef (pointer or interface type)
+./receivers.go:11:9: cannot define new methods on non-local type int
+./receivers.go:15:9: invalid receiver type Logger (pointer or interface type)
+exit status 1

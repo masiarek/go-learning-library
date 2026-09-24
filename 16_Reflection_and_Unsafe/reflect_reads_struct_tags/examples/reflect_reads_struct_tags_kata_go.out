@@ -1,0 +1,4 @@
+order_id,customer,Total
+7,Ada,19.5
+err: <nil>
+err: csvLines: got int (kind int), not a struct

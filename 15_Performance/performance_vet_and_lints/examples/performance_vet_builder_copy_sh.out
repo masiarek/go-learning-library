@@ -1,0 +1,6 @@
+$ go mod init example
+$ go vet .
+exit status 0
+$ go build -o order . && ./order
+panic: strings: illegal use of non-zero Builder copied by value
+exit status 2

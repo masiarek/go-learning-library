@@ -1,0 +1,11 @@
+$ go mod init example
+$ go vet .
+# example
+# [example]
+./dropped_results.go:12:3: result of fmt.Errorf call not used
+./dropped_results.go:18:2: result of errors.New call not used
+./dropped_results.go:19:2: result of (error).Error call not used
+exit status 1
+$ go run .
+load(101) returned: <nil>
+exit status 0

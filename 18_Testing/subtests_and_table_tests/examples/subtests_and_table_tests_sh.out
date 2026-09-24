@@ -1,0 +1,37 @@
+$ go mod init example
+$ go test -v
+=== RUN   TestParseQuantity
+=== RUN   TestParseQuantity/crates
+=== RUN   TestParseQuantity/negative
+=== RUN   TestParseQuantity/empty
+=== RUN   TestParseQuantity/three_fields
+=== RUN   TestParseQuantity/not_a_number
+--- PASS: TestParseQuantity
+    --- PASS: TestParseQuantity/crates
+    --- PASS: TestParseQuantity/negative
+    --- PASS: TestParseQuantity/empty
+    --- PASS: TestParseQuantity/three_fields
+    --- PASS: TestParseQuantity/not_a_number
+PASS
+ok  	example
+exit status 0
+$ go test -v -run 'TestParseQuantity/empty'
+=== RUN   TestParseQuantity
+=== RUN   TestParseQuantity/empty
+--- PASS: TestParseQuantity
+    --- PASS: TestParseQuantity/empty
+PASS
+ok  	example
+exit status 0
+$ go test -v -run '/not'
+=== RUN   TestParseQuantity
+=== RUN   TestParseQuantity/not_a_number
+--- PASS: TestParseQuantity
+    --- PASS: TestParseQuantity/not_a_number
+PASS
+ok  	example
+exit status 0
+$ go test -list .
+TestParseQuantity
+ok  	example
+exit status 0

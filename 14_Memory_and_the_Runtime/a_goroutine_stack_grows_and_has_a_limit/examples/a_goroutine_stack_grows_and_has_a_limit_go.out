@@ -1,0 +1,4 @@
+SetMaxStack(64<<20) returned the default limit: 1000000000
+SetMaxStack(1000000000) returned what was just set: 67108864
+depth reached: 1000000
+stack in use grew by more than 8 MB during the descent: true

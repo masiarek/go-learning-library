@@ -1,0 +1,10 @@
+Field(0) on an int               panic: reflect: call of reflect.Value.Field on int Value
+Field(2) on a 2-field struct     panic: reflect: Field index out of range
+Int() on a string                panic: reflect: call of reflect.Value.Int on string Value
+NumField() on an int Type        panic: reflect: NumField of non-struct type int
+Elem() on an int                 panic: reflect: call of reflect.Value.Elem on int Value
+Elem() on an int Type            panic: reflect: Elem of invalid type int
+Call() on an int                 panic: reflect: call of reflect.Value.Call on int Value
+Type() on the zero Value         panic: reflect: call of reflect.Value.Type on zero Value
+Kind() on the zero Value         no panic: Kind is invalid
+TypeOf(nil) is nil, so .Kind()   panic: runtime error: invalid memory address or nil pointer dereference

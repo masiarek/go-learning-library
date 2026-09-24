@@ -1,0 +1,12 @@
+line += field, 4 fields                    4
+strings.Builder with Grow, 4 fields        1
+fmt.Sprintf("%d", 4096)                    2
+strconv.Itoa(4096)                         1
+strconv.Itoa(42)                           0
+append to a nil slice, 10 ints             5
+make([]int, 0, 10), then 10 appends        1
+boxed = 42 (an int into any)               0
+boxed = 255 (an int into any)              0
+boxed = 256 (an int into any)              1
+boxed = 4096 (an int into any)             1
+boxed = 4096 (the constant)                0

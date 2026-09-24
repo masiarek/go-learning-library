@@ -1,0 +1,12 @@
+$ go mod init example
+$ go vet .
+# example
+# [example]
+./as_targets.go:15:14: second argument to errors.As must be a non-nil pointer to either a type that implements error, or to any interface type
+./as_targets.go:16:14: second argument to errors.As must be a non-nil pointer to either a type that implements error, or to any interface type
+./as_targets.go:18:14: second argument to errors.As must be a non-nil pointer to either a type that implements error, or to any interface type
+./as_targets.go:20:14: second argument to errors.As should not be *error
+exit status 1
+$ go build -o as_targets . && ./as_targets
+panic: errors: target must be a non-nil pointer
+exit status 2

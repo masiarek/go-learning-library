@@ -1,0 +1,5 @@
+$ go build offsets.go
+# command-line-arguments
+./offsets.go:24:30: invalid argument: o is not a selector expression
+./offsets.go:25:30: invalid argument: field Qty is embedded via a pointer in Line
+exit status 1

@@ -1,0 +1,19 @@
+$ go mod init example
+$ gofmt -l .
+$ go run .
+pricing: careful path, the default
+$ go run -tags fast .
+audit.go: compiled in, because fast && !debug
+pricing: fast path, compiled in with -tags fast
+$ go run -tags fast,debug .
+pricing: fast path, compiled in with -tags fast
+$ go list -f '{{.GoFiles}} ignored={{.IgnoredGoFiles}}' .
+[main.go pricing_careful.go] ignored=[audit.go pricing_fast.go]
+$ go list -tags fast -f '{{.GoFiles}} ignored={{.IgnoredGoFiles}}' .
+[audit.go main.go pricing_fast.go] ignored=[pricing_careful.go]
+$ GOOS=linux GOARCH=amd64 go list -f '{{.GoFiles}}' .
+[clock_amd64.go clock_linux.go main.go pricing_careful.go]
+$ GOOS=windows GOARCH=arm64 go list -f '{{.GoFiles}}' .
+[clock_arm64.go clock_windows.go main.go pricing_careful.go]
+$ GOOS=windows GOARCH=arm64 go list -tags fast -f '{{.GoFiles}}' .
+[clock_arm64.go clock_windows.go main.go pricing_fast.go]

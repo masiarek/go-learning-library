@@ -1,0 +1,26 @@
+$ go test -v -run=FuzzParseQuantity
+=== RUN   FuzzParseQuantity
+=== RUN   FuzzParseQuantity/seed#0
+=== RUN   FuzzParseQuantity/negative_pallets
+=== RUN   FuzzParseQuantity/unit_with_a_space
+    quantity_test.go:14: ParseQuantity("2 big crates") = 0, "", want a number and a unit; want 2, "big crates"
+--- FAIL: FuzzParseQuantity
+    --- PASS: FuzzParseQuantity/seed#0
+    --- PASS: FuzzParseQuantity/negative_pallets
+    --- FAIL: FuzzParseQuantity/unit_with_a_space
+FAIL
+FAIL	example
+exit status 1
+$ go test -v -run=FuzzParseQuantity
+=== RUN   FuzzParseQuantity
+=== RUN   FuzzParseQuantity/seed#0
+=== RUN   FuzzParseQuantity/negative_pallets
+=== RUN   FuzzParseQuantity/unit_with_a_space
+    quantity_test.go:13: the property is only for units without white space
+--- PASS: FuzzParseQuantity
+    --- PASS: FuzzParseQuantity/seed#0
+    --- PASS: FuzzParseQuantity/negative_pallets
+    --- SKIP: FuzzParseQuantity/unit_with_a_space
+PASS
+ok  	example
+exit status 0

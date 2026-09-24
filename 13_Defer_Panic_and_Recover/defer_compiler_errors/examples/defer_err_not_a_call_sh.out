@@ -1,0 +1,6 @@
+$ go build not_a_call.go
+# command-line-arguments
+./not_a_call.go:12:8: expression in defer must be function call
+./not_a_call.go:13:8: expression in defer must not be parenthesized
+./not_a_call.go:15:8: defer requires function call, not conversion Cents(total) (value of int type Cents)
+exit status 1

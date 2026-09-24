@@ -1,0 +1,4 @@
+$ go build missing_tilde.go
+# command-line-arguments
+./missing_tilde.go:30:22: Celsius does not satisfy Exact (possibly missing ~ for float64 in Exact)
+exit status 1

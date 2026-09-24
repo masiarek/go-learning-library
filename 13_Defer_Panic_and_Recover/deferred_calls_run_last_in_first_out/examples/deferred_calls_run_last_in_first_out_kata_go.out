@@ -1,0 +1,16 @@
+job 1: every step succeeds
+  do   reserve stock
+  do   charge card
+  do   print label
+  all steps done
+  undo print label
+  undo charge card
+  undo reserve stock
+job 2: the last step fails
+  do   reserve stock
+  do   charge card
+  do   print label
+  undo print label
+  undo charge card
+  undo reserve stock
+  recovered: print label: printer offline

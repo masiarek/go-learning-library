@@ -1,0 +1,14 @@
+$ go mod init example
+$ go vet .
+# example
+# [example]
+./line_test.go:10:6: Benchmarkjoin has malformed name: first letter after 'Benchmark' must not be lowercase
+exit status 1
+$ go test -bench=. -run='^$'
+# example
+# [example]
+./line_test.go:10:6: Benchmarkjoin has malformed name: first letter after 'Benchmark' must not be lowercase
+FAIL	example [build failed]
+exit status 1
+$ sed -i.bak s/Benchmarkjoin/BenchmarkJoin/ line_test.go && go vet .
+exit status 0

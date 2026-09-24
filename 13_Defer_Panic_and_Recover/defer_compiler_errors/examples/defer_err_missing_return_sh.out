@@ -1,0 +1,9 @@
+$ go build missing.go
+# command-line-arguments
+./missing.go:12:1: missing return
+exit status 1
+$ go build terminates.go
+exit status 0
+$ ./terminates
+customer of invoice 18: ACME
+exit status 0

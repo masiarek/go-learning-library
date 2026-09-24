@@ -1,0 +1,12 @@
+$ go test -v -run /err
+=== RUN   TestParseQuantity
+=== RUN   TestParseQuantity/err_empty
+=== RUN   TestParseQuantity/err_three_fields
+=== RUN   TestParseQuantity/err_not_a_number
+--- PASS: TestParseQuantity
+    --- PASS: TestParseQuantity/err_empty
+    --- PASS: TestParseQuantity/err_three_fields
+    --- PASS: TestParseQuantity/err_not_a_number
+PASS
+ok  	example
+exit status 0

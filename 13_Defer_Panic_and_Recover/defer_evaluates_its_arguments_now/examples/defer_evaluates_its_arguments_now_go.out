@@ -1,0 +1,9 @@
+argumentIsSavedNow: handled = 2 at exit
+  defer fmt.Println(handled) printed handled = 1
+closureReadsAtExit: handled = 2 at exit
+  the closure printed handled = 2
+receiverIsSavedNow: t.orders = 5 at exit
+  ReportLive (pointer receiver) saw orders = 5
+  Report (value receiver) saw orders = 1
+functionValueIsSavedNow: report now names the second report
+  ran the first report

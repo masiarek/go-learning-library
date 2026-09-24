@@ -1,0 +1,3 @@
+four bytes: checksum 0xf1, hinted 0xf1
+two bytes, checksum:       runtime error: index out of range [2] with length 2
+two bytes, checksumHinted: runtime error: index out of range [3] with length 2

@@ -1,0 +1,32 @@
+-- for r := range Readings
+producer: yielding 21
+loop: got 21
+producer: yield returned true, continuing
+producer: yielding 19
+loop: got 19
+producer: yield returned true, continuing
+producer: yielding 23
+loop: got 23
+producer: yield returned true, continuing
+producer: no more readings, returning
+main: the loop ended
+-- the same thing, written as a call
+producer: yielding 21
+loop: got 21
+producer: yield returned true, continuing
+producer: yielding 19
+loop: got 19
+producer: yield returned true, continuing
+producer: yielding 23
+loop: got 23
+producer: yield returned true, continuing
+producer: no more readings, returning
+-- iter.Seq and iter.Seq2 are names for these function types
+iter.Seq[int]
+iter.Seq2[string,int]
+loop: hall = 21
+loop: garage = 19
+loop: attic = 23
+-- func(func() bool) is the third shape: no values at all
+loop: tick
+loop: tick

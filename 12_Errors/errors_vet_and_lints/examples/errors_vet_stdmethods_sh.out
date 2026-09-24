@@ -1,0 +1,13 @@
+$ go mod init example
+$ go vet .
+# example
+# [example]
+./wrong_signatures.go:16:22: method Unwrap() should have signature Unwrap() error or Unwrap() []error
+./wrong_signatures.go:17:22: method Is(target any) bool should have signature Is(error) bool
+./wrong_signatures.go:18:22: method As(target error) bool should have signature As(any) bool
+exit status 1
+$ go run .
+catalogue has lamp: true
+errors.Unwrap(err): <nil>
+errors.Is(err, ErrTimeout): false
+exit status 0

@@ -1,0 +1,3 @@
+clamp        inlined: yes
+totalWeight  inlined: yes
+closeAll     inlined: no  (unhandled op DEFER)

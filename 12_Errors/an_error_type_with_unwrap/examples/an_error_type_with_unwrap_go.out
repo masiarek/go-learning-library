@@ -1,0 +1,15 @@
+err: refresh prices: query "select price from quotes": timeout
+errors.Is(err, ErrTimeout) = true
+errors.As(err, &qe)        = true -> Query: select price from quotes
+
+batch: 2 statements failed
+errors.Is(batch, ErrTimeout) = true
+errors.Unwrap(batch) == nil  = true (Unwrap() []error is not Unwrap() error)
+
+loadConfig: config invalid: workers: strconv.Atoi: parsing "ten": invalid syntax
+errors.Is(err, ErrConfigInvalid)  = true
+errors.Is(err, strconv.ErrSyntax) = false (the parser's error is text)
+had it been %w instead            = true (now callers can depend on strconv)
+
+bad : start server: Config could not be loaded.
+good: start server: config could not be loaded

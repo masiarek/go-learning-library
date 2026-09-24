@@ -1,0 +1,18 @@
+$ go mod init example
+$ go vet
+# example_test
+# [example_test]
+./example_test.go:16:1: ExampleOrder_Total_Discounted has malformed example suffix: Discounted
+./example_test.go:22:1: ExampleInvoice refers to unknown identifier: Invoice
+./example_test.go:28:1: ExampleOrder_Ship refers to unknown field or method: Order.Ship
+./example_test.go:34:1: ExampleOrder should be niladic
+exit status 1
+$ go test
+# example_test
+# [example_test]
+./example_test.go:16:1: ExampleOrder_Total_Discounted has malformed example suffix: Discounted
+./example_test.go:22:1: ExampleInvoice refers to unknown identifier: Invoice
+./example_test.go:28:1: ExampleOrder_Ship refers to unknown field or method: Order.Ship
+./example_test.go:34:1: ExampleOrder should be niladic
+FAIL	example [build failed]
+exit status 1

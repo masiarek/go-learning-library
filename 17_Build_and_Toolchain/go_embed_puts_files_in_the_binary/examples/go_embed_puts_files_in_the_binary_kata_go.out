@@ -1,0 +1,5 @@
+first line: // Kata: embed this program's own source file into the binary it becomes, and
+declares package main: true
+holds its own directive: true
+ends with a newline: true
+lines: 24

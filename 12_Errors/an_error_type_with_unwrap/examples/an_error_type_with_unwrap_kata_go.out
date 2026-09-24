@@ -1,0 +1,4 @@
+err: gave up after 3 attempts: attempt 3: service unavailable
+errors.Is(err, ErrUnavailable) = true
+attempts: 3
+succeeds on the second try: <nil>

@@ -1,0 +1,8 @@
+$ go mod init example
+$ go vet main.go
+# command-line-arguments
+# [command-line-arguments]
+./main.go:14:16: net/mail.Address struct literal uses unkeyed fields
+exit status 1
+$ go vet keyed.go
+exit status 0

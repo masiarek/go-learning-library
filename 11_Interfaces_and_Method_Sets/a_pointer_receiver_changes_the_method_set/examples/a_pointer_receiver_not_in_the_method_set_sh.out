@@ -1,0 +1,9 @@
+$ go build not_addressable.go
+# command-line-arguments
+./not_addressable.go:12:24: cannot use c (variable of struct type Counter) as Incrementer value in variable declaration: Counter does not implement Incrementer (method Increment has pointer receiver)
+./not_addressable.go:14:17: cannot call pointer method Increment on Counter
+./not_addressable.go:16:18: cannot call pointer method Increment on Counter
+./not_addressable.go:17:12: cannot call pointer method Increment on Counter
+exit status 1
+$ go build addressable.go
+exit status 0

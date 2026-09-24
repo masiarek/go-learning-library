@@ -1,0 +1,6 @@
+$ go build wrong_signature.go
+# command-line-arguments
+./wrong_signature.go:11:10: cannot use QuotaError{…} (value of struct type QuotaError) as error value in return statement: QuotaError does not implement error (wrong type for method Error)
+		have Error() error
+		want Error() string
+exit status 1

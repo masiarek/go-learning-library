@@ -1,0 +1,7 @@
+$ go vet .
+exit status 0
+$ go vet -tags fast .
+# example
+# [example]
+./report_fast.go:8:22: fmt.Printf format %s has arg orders of wrong type int
+exit status 1

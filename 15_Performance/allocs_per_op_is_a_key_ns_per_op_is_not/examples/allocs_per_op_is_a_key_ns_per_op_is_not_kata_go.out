@@ -1,0 +1,4 @@
+joinWithPlus     iterations 1000  880 B/op  8 allocs/op
+joinWithBuilder  iterations 1000  256 B/op  1 allocs/op
+joinWithJoin     iterations 1000  352 B/op  2 allocs/op
+same line from all three: true

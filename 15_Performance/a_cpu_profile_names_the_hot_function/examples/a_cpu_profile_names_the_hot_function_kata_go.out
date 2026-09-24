@@ -1,0 +1,6 @@
+total is not zero: true
+first two bytes: 1f 8b (the gzip magic number)
+profile names "main.hot"     true
+profile names "main.main"    true
+profile names "cpu"          true
+profile names "nanoseconds"  true

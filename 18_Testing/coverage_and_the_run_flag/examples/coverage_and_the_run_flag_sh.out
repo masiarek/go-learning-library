@@ -1,0 +1,20 @@
+$ go mod init example
+$ go test -cover
+PASS
+coverage: 60.0% of statements
+ok  	example
+exit status 0
+$ go test -coverprofile=cover.out >/dev/null && go tool cover -func=cover.out
+example/quantity.go:11:	ParseQuantity	85.7%
+example/quantity.go:24:	Plural		0.0%
+total:			(statements)	60.0%
+exit status 0
+$ head -n 3 cover.out
+mode: set
+example/quantity.go:11.51,13.22 2 1
+example/quantity.go:13.22,15.3 1 1
+$ go test -cover     # with more_test.go added
+PASS
+coverage: 100.0% of statements
+ok  	example
+exit status 0

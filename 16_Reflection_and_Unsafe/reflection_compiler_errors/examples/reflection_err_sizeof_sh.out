@@ -1,0 +1,6 @@
+$ go build sizes.go
+# command-line-arguments
+./sizes.go:11:28: use of untyped nil in argument to unsafe.Sizeof
+./sizes.go:12:28: int64 (type) is not an expression
+./sizes.go:13:28: audit() (no value) used as value
+exit status 1
